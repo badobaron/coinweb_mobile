@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="coinweb.dao.MemberDAO">
+
+	<insert id="getInsertResult">
+		insert into coinweb_member(email,name,pass,agree,jdate) values(#{email},#{name},#{pass},#{agree},now())
+	</insert>
+	
+	<select id="getLoginResult" resultType="int">
+		select count(*) from coinweb_member where email=#{email} and pass=#{pass}
+	</select>
+	
+	<select id="getResultList" resultType="coinweb.vo.MemberVO">
+		select id,email,name,date_format(jdate, '%Y%m%d') as jdate from coinweb_member ORDER BY jdate
+	</select>
+	
+	<select id="getResultVO" resultType="coinweb.vo.MemberVO">
+		select email, id,name from coinweb_member where email=#{email}
+	</select>
+	
+	<select id="getIdCheckResult" resultType="int">
+		select count(*) from coinweb_member where email=#{email}
+	</select>
+	
+	<select id="getJoinIdResult" resultType="coinweb.vo.MemberVO">
+		select id from coinweb_member order by jdate desc limit 1
+	</select>
+	
+	<select id="getNameCheckResult" resultType="int">
+		select count(*) from coinweb_member where name=#{name}
+	</select>
+	
+	<select id="getLoginCheckResult" resultType="int">
+		select count(*) from coinweb_member where pass=#{param2} and id=#{param3}
+	</select>
+	
+	<update id="getPassWordChangeResult">
+		update coinweb_member set pass=#{pass} where email=#{email}
+	</update>
+	
+	
+	<select id="getRankingList" resultType="coinweb.vo.RankingVO">
+		select @rownum:=@rownum+1 as rno, s.id, s.name, s.money, s.profit 
+		from (select c.id, c.name, FORMAT(w.TOT_BALANCE , 0) as money,w.TOT_BALANCE as profit 
+			 from coinweb_member c,wallet w where c.id = w.id and coin='KRW' order by  money desc, id) s,
+			 (select @rownum:=0)r limit 20;
+
+	</select>
+	
+</mapper>	

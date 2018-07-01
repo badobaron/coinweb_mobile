@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+
+.index_cointable img{
+
+	width: 25px;
+	height: 25px;
+}
+
+
+
+.index_cointable td p{
+	
+}
+
+
+
+.coinlist table td:nth-child(2){
+	font-weight: bold;
+	
+}
+.coinlist table td:nth-child(1){
+	text-align: right;
+	vertical-align: middle !important;
+}
+
+.coinlist table td:nth-child(3){
+	text-align: right !important;
+	vertical-align: middle !important; 
+}
+.coinlist table td:nth-child(3) p{
+	font-size:100% !important;
+}
+
+.coinlist table td:nth-child(4){
+	vertical-align: middle !important;
+}
+
+.coin_name{
+	font-size: 1px !important;
+	font-weight: normal !important;
+	color: #A4A4A4 !important;
+}

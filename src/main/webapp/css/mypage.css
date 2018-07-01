@@ -1,0 +1,40 @@
+@CHARSET "EUC-KR";
+
+
+
+
+
+.media-body h4{
+	padding-top:6px;
+	color: #0080ff;
+	font-weight: bold;
+}
+
+.media-body p{
+	font-size: 12px;
+}
+
+.mypage{
+	padding : 35px;
+}
+
+
+.badge{
+	display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #400040;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    /* background-color: #777; */
+
+}
+
+
+.list-group-item a>.next {
+    float: right;
+}

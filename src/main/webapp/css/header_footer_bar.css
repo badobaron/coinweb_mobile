@@ -1,0 +1,192 @@
+@CHARSET "UTF-8";
+
+/* css 공통 초기화 코드
+   
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+ 
+
+body {margin:0;}
+
+ 
+/**header*/
+.navbar p{
+
+color:#fff;
+font-size: 30px;
+
+}
+
+
+
+
+
+
+
+
+
+ 
+
+/*footer_bar*/
+
+.footer_nav{
+	z-index: 1001 !important;
+}
+
+.footer_container a , .footer_container span {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: rgb(158, 158, 158);
+    font-size: 20px;
+}
+
+.footer_container a p, .footer_container span p {
+	padding:3px;
+    font-size: 12px;
+    color: rgb(158, 158, 158);
+
+}
+ 
+
+.footer_container a:hover, .footer_container a p:hover  {
+    color: rgb(26, 165, 188);
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1099;
+    top: 0;
+    right: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+    margin-bottom: 50px;
+
+}
+
+ 
+
+.sidenav a {
+	
+    padding: 0px 0px 0px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    
+}
+
+.sidenav hr{
+	margin: 20px;
+}
+
+
+
+.navbar-inverse{
+	background-color: rgb(26, 165, 188);
+	padding-bottom: 10px;
+	padding-top: 8px;
+	border:none;
+}
+ 
+
+.sidenav a:hover {
+
+    color: #b3b3b3;
+
+}
+
+
+.footer_nav{
+	background-color: white;
+	border-top: 1px solid #969696 !important;
+} 
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+ 
+   
+
+}
+
+#footer_mask {  
+  position:absolute;  
+  left:0;
+  top:0;
+  z-index:1090;  
+  background-color:#000;  
+  display:none;  
+}
+
+
+
+ 
+
+

@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+.nav2{
+	margin-top:50px;
+	margin-bottom:60px;
+}
+
+.nav-tabs { border-bottom: 2px solid #DDD; font-weight:bold !important;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none !important; color: #4285F4 !important; background: transparent; }
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); border: none !important; }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.nav-tabs > li  {width:33.3%; text-align:center;}
+
+@media all and (max-width:724px){
+.nav-tabs > li > a > span {display:none;}	
+.nav-tabs > li > a {padding: 5px 5px;}
+}
+
+.ask_price, .bid_price{
+	font-weight:700;
+	height: 30px;
+	border-bottom: 1px solid #ffffff;
+}
+
+.ask_price{background-color: #CFEAFF;}
+
+.bid_price{background-color: #FFE8EF;}
+
+#min_price{ color: red }
+
+#max_price{color: blue;}
+
+.table1{
+	width:100%;
+	text-align:center;
+	vertical-align: middle !important;
+	font-size:15px;
+}
+td, tr{
+	vertical-align: middle !important;
+}
+
+thead tr td{
+	font-weight:bold;
+	height: 30px;
+}
+
+.table1 thead{
+	border-bottom: 1px solid #DDD;
+}
+
+.sub{
+	margin:auto;
+	width:90%; 
+	vertical-align: bottom !important
+}
+
+.sub2{
+	margin:auto;
+	width:90%;
+}
+
+.table2 td{
+	padding: 5px 0px 5px 0px;
+	border-bottom: 1px solid #eaeaec;
+	font-size: 12px;
+}
+
+#table_line{
+	border-top: 1px solid #DDD !important;
+}
+
+.table2 td:nth-child(1){
+	text-align: left;
+	width:45%;
+}
+
+.table2 td:nth-child(2){
+	text-align: right;
+}
+
+
+.nav-pills>li{float:center; width:43% !important; position: relative !important; left: 5% !important;}
+.nav-pills>li>a{border-radius:4px;border:1px solid #4285F4 !important; !important; color:#4285F4 !important;}
+.nav-pills>li+li{margin-left:10px !important;}
+.nav-pills>li.active>a,.nav-pills>li.active>a:focus,.nav-pills>li.active>a:hover{color:#fff !important;background-color:#4285F4 !important}
+.nav-pills{margin:auto !important;}
+
+.button{
+	margin:auto;
+	margin:16px;
+	text-align:center;
+}
+.coinWallet{font-size:13px; text-align:center; color:#808080;}
+
+.coinWallet_2{padding-top:15px;}
+
+@media all and (max-width:340px){
+.coinWallet{font-size:11px; text-align:center;}
+}

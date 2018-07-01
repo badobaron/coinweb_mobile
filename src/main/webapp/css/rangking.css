@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+.rangk_header{
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	color: white;
+
+	background: linear-gradient(to right , rgba(51, 153, 255, 0.9),#00CED1);
+}
+
+.rangking_header_h1{
+	/*랭킹 폰트설정*/
+	padding-top: 50px;
+}
+#rimg{
+	
+	padding-top:15px;
+}
+#ment2{
+
+	font-size:13px;
+		padding-top:5px;
+	padding-bottom:20px;
+}
+#ment{
+	font-size:20px;
+	padding-bottom:5px;
+	  font-weight: bold;
+}
+
+
+
+
+.rangking_main{
+	margin: auto;
+font-size: 20px;
+	width: 100%;
+	margin-top:50px;
+	margin-bottom: 150px;
+	text-align: center;
+	
+}
+
+
+/*1위*/
+.rangking_1{
+
+	padding-bottom:20px;
+	border-bottom: 1px solid #d9d9d9;
+}
+/*23위*/
+.rangk_top2{
+	
+	display: inline-block;
+width: 45%;
+	text-align: center;
+	margin-bottom: 50px;
+	
+}
+
+.rangking_2{
+		padding-bottom:20px;
+	border-bottom: 1px solid #d9d9d9;
+}
+.rangking_3{
+		padding-bottom:20px;
+	border-bottom: 1px solid #d9d9d9;
+}
+/*나머지 랭킹*/
+.rangk_bottom{
+	
+} 
+.p1{
+	font-size:18px;
+}
+.rangking_4_20 {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.rangking_4_20 tr {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    
+    
+}
+.rangking_4_20 th{
+	font-size:12px;
+	   font-weight: bold;
+}
+.rangking_4_20 td{
+	font-size:16px;
+	
+}
+.rangking_4_20 tr:hover {background-color:#f9f9f9;}
+
+.rangking_4_20 td:nth-child(1){
+	
+	  text-align: center;		  
+	     width:20%;
+
+	 
+}
+.rangking_4_20  th:nth-child(1){
+	  text-align: center;	  
+	   width:20%;
+	   
+	
+}
+.rangking_4_20  th:nth-child(2){
+	  text-align: center;	  
+	  
+}
+.rangking_4_20  th:nth-child(3){
+	  text-align: center;	  
+	 
+	   
+}
+.rangking_4_20  th:nth-child(4){
+	  text-align: center;	  
+	
+}
+.rangking_4_20 td:nth-child(2){
+	 text-align: center;	  
+ width:30%;
+	    
+}
+.rangking_4_20 td:nth-child(3){
+	 text-align: center;	  
+	   width:30%;
+	 
+}
+.rangking_4_20 td:nth-child(4){
+	 text-align: center;	  
+	   width:10%;
+	    
+}
+
+/*랭킹끝*/
