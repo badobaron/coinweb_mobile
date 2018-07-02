@@ -20,6 +20,18 @@
 
 <script>
 
+var now_price = 0;
+var coin = "BTC";
+
+var avail_won = 0;
+var avail_coin = 0;
+var last_price = 0;
+var cancel_idx = 0;
+var total_buy_price = 0;
+var total_sell_price = 0;
+
+var sid = '<c:out value="${sid}"/>';
+
 function numberWithCommas(x) {
     return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -29,11 +41,163 @@ function Floor(n, pos) {
 	return num.toFixed(pos);
 }
 
-var now_price = 0;
-var coin = "BTC";
 
 
+//초기 화면띄우기
+$(function() {
+	GetHoga();
+	GetTransactions();
+	GetCoinData();
+	GetChart();
 	
+	/* fSetHogaBg();	
+	GetMyData();
+	GetOrderList();
+	GetHistoryList(); */
+	/* $("#coinname").html(coin+'('+$('.coin_sec').text()+')');
+	$('.coin_btn').click(function (e) {
+		$(".coin_btn").removeClass('coin_sec');
+		$(this).addClass('coin_sec');
+		coin = $(this).data('coin');
+		$("#coinname").html(coin+'('+$(this).text()+')');
+		$('#buy_price').val("");
+		$('#sell_price').val("");
+		$('#buy_unit').val("");
+		$('#sell_unit').val("");
+		//fShowData();
+		GetCoinData();
+		GetHoga();
+		GetChart();
+		GetMyData();
+		GetOrderList();
+		GetHistoryList();
+	}); */
+
+});
+
+
+function GetChart(){
+	$.get('proxy.do',{
+			csurl:'https://www.bithumb.com/resources/chart/'+coin+'_xcoinTrade_10M.json'
+		}, function (data) {
+		    // split the data set into ohlc and volume
+		    var price = [],
+		        volume = [],
+		        dataLength = data.length,
+		
+		        i = 0;
+		
+		    for (i; i < dataLength; i += 1) {
+		        price.push([
+		            data[i][0], // the date
+		            data[i][1], // open
+		            data[i][3], // high
+		            data[i][4], // low
+		            data[i][2] // close
+		        ]);
+		
+		        volume.push([
+		            data[i][0], // the date
+		            data[i][5] // the volume
+		        ]);
+		    }
+		
+		
+		    // create the chart
+		    Highcharts.stockChart('container', {
+		      	chart: {
+		            type: 'line',
+		            marginRight: 60
+		        },
+		        rangeSelector: {
+		        	buttons: [ 
+								{type: 'day',count: 1,text: '1d'},
+								{type: 'week',count: 1,text: '1w'},
+								{type: 'all',count: 1, text: 'All'}
+							],
+							selected: 0,
+							inputEnabled: true
+		        },
+		        navigator: {
+		            enabled: false
+		        },
+		        mapNavigation: {
+		            enabled: true,
+		            enableButtons: false
+		        },
+		        plotOptions: {
+					candlestick: {
+						color: 'blue',
+						lineColor: 'blue',
+						upColor: 'red',
+						upLineColor: 'red'
+					}
+				},
+				xAxis: {
+		            gridLineWidth: 1,
+		        },
+		        yAxis: [{
+		            labels: {
+		            	textAlign: 'left',
+		                align: 'right',
+		                x: 60,
+		                y: 5,
+		                format: '{value:.0f}'
+		            },
+		            height: '70%',
+		            lineWidth: 2,
+		           
+		            resize: {
+		                enabled: true
+		            },
+		            tickLength: 5,
+		            tickPosition: "outside",
+		            tickWidth: 1,
+		            tickColor: "black",
+		            showLastLabel: true,            
+		        }, {
+		            labels: {
+		            	textAlign: 'left',
+		                align: 'right',
+		                x: 60,
+		                y: 5,
+		                format: '{value:.0f}'
+		            },
+		            top: '70%',
+		            height: '30%',
+		            offset: 0,
+		            lineWidth: 2,
+		            tickLength: 5,
+		            tickPosition: "outside",
+		            tickWidth: 1,
+		            tickColor: "black"
+		        }],
+		
+		        tooltip: {
+		            split: true
+		        },
+		
+		        series: [{
+		            type: 'candlestick',
+		            name: 'Price',
+		            data: price
+		
+		        }, {
+		            type: 'column',
+		            name: 'Volume',
+		            data: volume,
+		            yAxis: 1
+		
+		        }]
+		    });
+		    Highcharts.setOptions({
+		        global: {
+		            useUTC: false
+		        }
+		    });
+		});
+	}
+
 function GetCoinData(){
 	$.get('https://api.bithumb.com/public/ticker/'+coin, function(data) {
 		var opening_price = data['data']['opening_price'];
@@ -301,7 +465,7 @@ function fShowData() {
 				</table>
  			</div>
 			<div class="tab-pane fade" id="chart">
-				<div id="container" ></div>
+				<div id="container" style="height: 350px; min-width: 310px"></div>
 			</div>
 			<div class="tab-pane fade" id="orderlist">
 				<div class="button">

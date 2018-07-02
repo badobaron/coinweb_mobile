@@ -77,7 +77,7 @@ function proc() {
 
 </head>
 
-<body>
+<body onload="proc()">
 	
 
 

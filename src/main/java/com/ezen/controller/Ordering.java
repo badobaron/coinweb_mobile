@@ -56,7 +56,7 @@ public class Ordering extends Thread {
 				URL url2 = null;
 				try {
 					url2 = new URL(
-							"http://localhost:8080/coinweb/order_all_list.do?coin=" + coin);
+							"http://localhost:8080/coinweb_mobile/order_all_list.do?coin=" + coin);
 				} catch (MalformedURLException e) {
 					e.printStackTrace();
 				}

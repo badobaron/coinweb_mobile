@@ -39,29 +39,22 @@
 		<jsp:include page="coin_list.jsp" />
 	</div>
 
-<br>
+	<br>
 
 	<session class="index_coinfreeboard">
 	<div class="container">
-		<a href="${pageContext.request.contextPath}/freeboard.do"><h2>자유게시판	></h2></a> 
-		<br><br>
-		
+		<a href="${pageContext.request.contextPath}/freeboard.do"><h2>자유게시판
+				></h2></a> <br>
+		<br>
+
 		<jsp:include page="freeboard/freeboard_list.jsp" />
-		
+
 	</div>
 	</session>
 
-
-
-<br><br><br>
-
-
-
-
-
-
-
-
+	<br>
+	<br>
+	<br>
 
 
 	<jsp:include page="footer_bar.jsp" />
