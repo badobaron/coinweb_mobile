@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="ko">
@@ -18,14 +19,19 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/freeboard.css">
 
+<!-- 페이징저리 -->	
+<script src="http://localhost:8080/coinweb/js/am-pagination.js"></script>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/coinweb/css/am-pagination.css">
+
+
+
+	
+
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
 </head>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
+
+
 <body>
 
 
@@ -49,9 +55,7 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<div class="col-xs-4 text-right">
-				<a
-					href="${pageContext.request.contextPath}/freeboard_write.do"
-					data-toggle="tooltip" title="글쓰기"> <i
+				<a data-toggle="tooltip" type="button" id="freeboard_write_btn" title="글쓰기"> <i
 					class="fa fa-pencil-square-o" style="font-size: 25px;"></i></a>
 			</div>
 		</div>
@@ -60,38 +64,117 @@ $(document).ready(function(){
 
 
 
-	<jsp:include page="freeboard_list.jsp" />
+
+
+<div class="container">
+
+  <!-- 글목록 -->
+
+ <c:forEach items="${list}" var="vo">
+  <div class="media">
+    <div class="media-left">
+      	<h5>${vo.no}</h5>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><a href="${pageContext.request.contextPath}/freeboard_content.do?no=${vo.no}">${vo.title}</a></h4>
+      <div class="row">
+      	<div class="col-xs-3">${vo.name}</div>
+      	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> ${vo.hits}</div>
+      	<div class="col-xs-4 text-right">${vo.fbdate}</div>
+      	<div class="col-xs-2 text-right"><i class="fa fa-thumbs-up"></i> ${vo.likeit}</div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  </c:forEach>
+  
+ 
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="container">
- <form action="*">
+ <form action="/coinweb/freeboard_search.do?rpage=${rpage}" method="get">
     <div class="input-group form-group-sm">
-      <input type="text" class="form-control" placeholder="검색" name="search">
+      <input type="text" name="search"  class="form-control" placeholder="검색" name="search">
       <div class="input-group-btn">
-        <button class="btn btn-default " type="button">
+        <button class="btn btn-default " type="submit">
         <i class="fa fa-search" style="font-size: 16px; float: left;" ></i></button>
       </div>
     </div>
+    
+    <div id="ampaginationsm" style="text-align: center; ">dd</div>
   </form>
   </div>
 
 
 
-  <div class="container text-center">
-              
-  <ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-  </ul>
-</div>
- 
+
+ <br><br><br><br><br><br>
  <br><br><br><br><br><br>
 
 
 
 <jsp:include page="../footer_bar.jsp" />
 
+
+
+<script>
+	$(document).ready(function($) {
+		
+		
+		var pager = $('#ampaginationsm').pagination({
+			
+		    maxSize: 7,	    		// max page size
+		    totals: '${dbCount}',	// total pages	
+		    page: '${rpage}',		// initial page		
+		    pageSize: 10,			// max number items per page
+		
+		    // custom labels		
+		    lastText: '&raquo;&raquo;', 		
+		    firstText: '&laquo;&laquo;',		
+		    prevText: '&laquo;',		
+		    nextText: '&raquo;',
+				     
+		    btnSize:'sm'	// 'sm'  or 'lg'		
+			});
+		
+		$('#ampaginationsm').on('am.pagination.change',function(e){
+			   $('.showlabelsm').text('The selected page no: '+e.page);
+	           $(location).attr('href', "/coinweb/freeboard.do?rpage="+e.page);         
+	   		});
+		});	
+	
+	$("#freeboard_write_btn").click(function($){
+		
+		
+		var sid = '<c:out value="${sid}"/>';
+
+		if(sid==""){
+			alert("로그인 후 이용하실수 있습니다.");
+		}else{
+			location.href= '/coinweb/freeboard_write.do';			
+		}
+	});
+</script>
+
 </body>
+
+
+
+
 </html>

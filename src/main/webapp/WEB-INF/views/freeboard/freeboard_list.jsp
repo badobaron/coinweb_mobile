@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="ko">
@@ -24,10 +26,7 @@
 <script>
 
 
-$(document).ready(function(){  
-	$('[data-toggle="tooltip"]').tooltip();   
- 
-});  
+
 
 
 
@@ -40,87 +39,25 @@ $(document).ready(function(){
 
   <!-- 글목록 -->
 
+ <c:forEach items="${list}" var="vo">
   <div class="media">
     <div class="media-left">
-      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
+      	<h5>${vo.no}</h5>
     </div>
     <div class="media-body">
-      <h4 class="media-heading"><a href="${pageContext.request.contextPath}/freeboard_content.do">제목을 다는 곳입니다.</a></h4>
+      <h4 class="media-heading"><a href="${pageContext.request.contextPath}/freeboard_content.do?no=${vo.no}">${vo.title}</a></h4>
       <div class="row">
-      	<div class="col-xs-3">userID</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
-      	<div class="col-xs-3 text-right">2016.11.02</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-thumbs-o-up"></i> 1</div>
+      	<div class="col-xs-3">${vo.name}</div>
+      	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> ${vo.hits}</div>
+      	<div class="col-xs-4 text-right">${vo.fbdate}</div>
+      	<div class="col-xs-2 text-right"><i class="fa fa-thumbs-up"></i> ${vo.likeit}</div>
       </div>
     </div>
   </div>
   <hr>
+  </c:forEach>
   
-  
-    <div class="media">
-    <div class="media-left">
-      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
-      <div class="row">
-      	<div class="col-xs-3">userID</div>
-      <div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
-      	<div class="col-xs-3 text-right">2016.11.02</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-thumbs-o-up"></i> 1</div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-  
-    <div class="media">
-    <div class="media-left">
-      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
-      <div class="row">
-      	<div class="col-xs-3">userID</div>
-  		  <div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
-      	<div class="col-xs-3 text-right">2016.11.02</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-thumbs-o-up"></i> 1</div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-      <div class="media">
-    <div class="media-left">
-      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
-      <div class="row">
-       	<div class="col-xs-3">userID</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
-      	<div class="col-xs-3 text-right">2016.11.02</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-thumbs-o-up"></i> 1</div>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-  <div class="media">
-    <div class="media-left">
-      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
-      <div class="row">
-       	<div class="col-xs-3">userID</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
-      	<div class="col-xs-3 text-right">2016.11.02</div>
-      	<div class="col-xs-3 text-right"><i class="fa fa-thumbs-o-up"></i> 1</div>
-      </div>
-    </div>
-  </div>
-  <hr>
+ 
   
   
 
