@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="coinweb.vo.BoardVO, coinweb.dao.BoardDAO, java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -75,8 +75,39 @@
 
 
 
+<div class="container">
 
-<jsp:include page="freeboard_list.jsp"></jsp:include>
+		<!-- 글목록 -->
+
+		<c:forEach items="${list}" var="vo">
+			<div class="media">
+				<div class="media-left">
+					<h5>${vo.no}</h5>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">
+						<a
+							href="${pageContext.request.contextPath}/freeboard_content.do?no=${vo.no}">${vo.title}</a>
+					</h4>
+					<div class="row">
+						<div class="col-xs-3">${vo.name}</div>
+						<div class="col-xs-3 text-right">
+							<i class="fa fa-eye"></i> ${vo.hits}
+						</div>
+						<div class="col-xs-4 text-right">${vo.fbdate}</div>
+						<div class="col-xs-2 text-right">
+							<i class="fa fa-thumbs-up"></i> ${vo.likeit}
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</c:forEach>
+
+
+
+
+	</div>
 
 
 
@@ -102,22 +133,15 @@
 
 			<div class="input-group form-group-sm col-xs-8">
 				<input name="search" type="text" class="form-control"
-					placeholder="검색" " style="float: left;">
+					placeholder="검색" " style=" float: left;">
 				<div class="input-group-btn">
 					<button class="btn btn-default " type="submit">
 						<i class="fa fa-search" style="font-size: 16px; float: left;"></i>
 					</button>
 				</div>
-
 			</div>
-
-
-
-
-
 		</form>
 	</div>
-
 	<div id="ampaginationsm" style="text-align: center;"></div>
 
 
@@ -190,38 +214,37 @@ function closeNav() {
 </body>
 
 <script>
-	$(document).ready(function($) {
-		var pager = $('#ampaginationsm').pagination({
-			
-		    maxSize: 7,	    		// max page size
-		    totals: '${dbCount}',	// total pages	
-		    page: '${rpage}',		// initial page		
-		    pageSize: 10,			// max number items per page
-		
-		    // custom labels		
-		    lastText: '&raquo;&raquo;', 		
-		    firstText: '&laquo;&laquo;',		
-		    prevText: '&laquo;',		
-		    nextText: '&raquo;',
-				     
-		    btnSize:'sm'	// 'sm'  or 'lg'		
-			});
-		
-		$('#ampaginationsm').on('am.pagination.change',function(e){
-			   $('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "/coinweb/freeboard.do?rpage="+e.page);         
-	   		});
-		});	
-	
-	$("#freeboard_write_btn").click(function($){
-		var sid = '<c:out value="${sid}"/>';
 
-		if(sid==""){
-			alert("로그인 후 이용하실수 있습니다.");
-		}else{
-			location.href= '/coinweb/freeboard_write.do';			
-		}
+
+jQuery.noConflict();
+
+jQuery(document).ready(function($){
+	
+	var pager = $('#ampaginationsm').pagination({
+		
+	    maxSize: 7,	    		// max page size
+	    totals: '${dbCount}',	// total pages	
+	    page: '${rpage}',		// initial page		
+	    pageSize: 5,			// max number items per page
+	
+	    // custom labels		
+	    lastText: '&raquo;&raquo;', 		
+	    firstText: '&laquo;&laquo;',		
+	    prevText: '&laquo;',		
+	    nextText: '&raquo;',
+			     
+	    btnSize:'sm'	// 'sm'  or 'lg'		
 	});
+	
+	$('#ampaginationsm').on('am.pagination.change',function(e){
+		   $('.showlabelsm').text('The selected page no: '+e.page);	 
+          $(location).attr('href', "/coinweb/freeboard_search.do?rpage="+e.page+"&search=${search}&findValue=${findValue}");         
+   });
+	
+	
+		
+	});	
+
 </script>
 
 </html>

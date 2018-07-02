@@ -94,7 +94,7 @@ SqlSessionTemplate sqlSession;
 		}else if(findValue.equals("content")){
 			dbCount= dao.execTotalCountContent(search);		
 		}else if(search.equals("")){
-			dbCount= dao.execTotalCount();
+			dbCount= dao.execTotalCountContent(search);	
 		}
 		
 

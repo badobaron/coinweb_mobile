@@ -98,9 +98,9 @@
 			
 			<c:if test="${sid eq vo.id or sid eq 1001}">
 				<a
-					href="${pageContext.request.contextPath}/freeboard/freeboard_update.jsp"><button
+					href="${pageContext.request.contextPath}/freeboard_update.do?no=${no}"><button
 						type="button" class="btn btn-comm-con btn-xs">수정하기</button></a>
-				<a href="#"><button type="button"
+				<a href="${pageContext.request.contextPath}/freeboard_delete.do?no=${no}"><button type="button"
 						class="btn btn-comm-con btn-xs">바로삭제</button></a>
 			</c:if>
 			<a href="${pageContext.request.contextPath}/freeboard.do"><button
@@ -266,7 +266,7 @@ $(document).ready(function(){
 					      
 					      "<span class='view3 replyRdate col-xs-6'>"+data[i].rdate +"</span></div>"+
 					      "<div class='row'>"+
-					      "<div class='col-xs-12'>"+data[i].content+"</div></div>"+
+					      "<div class='col-xs-12 view2'>"+data[i].content+"</div></div>"+
 					  		
 						  "</div>";				
 						
