@@ -17,7 +17,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/freeboard.css">
+	href="${pageContext.request.contextPath}/css/freeboard.css">
 
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
@@ -56,7 +56,7 @@
 			<div class="media-body">
 				<h4 class="media-heading">
 					<a
-						href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">질문
+						href="${pageContext.request.contextPath}/freeboard_content.do">질문
 						제목입니다.</a>
 				</h4>
 				<div class="row">
@@ -72,7 +72,7 @@
 			<div class="media-body">
 				<h4 class="media-heading">
 					<a
-						href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">질문
+						href="${pageContext.request.contextPath}/freeboard_content.do">질문
 						제목입니다.</a>
 				</h4>
 				<div class="row">
@@ -88,7 +88,7 @@
 			<div class="media-body">
 				<h4 class="media-heading">
 					<a
-						href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">질문
+						href="${pageContext.request.contextPath}/freeboard_content.do">질문
 						제목입니다.</a>
 				</h4>
 				<div class="row">
@@ -103,7 +103,7 @@
 			<div class="media-body">
 				<h4 class="media-heading">
 					<a
-						href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">질문
+						href="${pageContext.request.contextPath}/freeboard_content.do">질문
 						제목입니다.</a>
 				</h4>
 				<div class="row">
@@ -118,7 +118,7 @@
 			<div class="media-body">
 				<h4 class="media-heading">
 					<a
-						href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">질문
+						href="${pageContext.request.contextPath}/freeboard_content.do">질문
 						제목입니다.</a>
 				</h4>
 				<div class="row">

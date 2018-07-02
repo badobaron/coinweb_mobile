@@ -17,7 +17,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/freeboard.css">
+	href="${pageContext.request.contextPath}/css/freeboard.css">
 
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
@@ -89,11 +89,11 @@
 
 			<a href="#"><button type="button" class="btn btn-comm-con btn-xs">이전
 					페이지</button></a> <a
-				href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_update.jsp"><button
+				href="${pageContext.request.contextPath}/freeboard/freeboard_update.jsp"><button
 					type="button" class="btn btn-comm-con btn-xs">수정하기</button></a> <a
 				href="#"><button type="button" class="btn btn-comm-con btn-xs">바로삭제</button></a>
 			<a
-				href="http://localhost:8080/coinweb_mobile/freeboard/freeboard.jsp"><button
+				href="${pageContext.request.contextPath}/freeboard.do"><button
 					type="button" class="btn btn-xs">게시글</button></a>
 		</div>
 

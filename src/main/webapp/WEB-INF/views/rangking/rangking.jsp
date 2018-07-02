@@ -1,18 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="ko">
+	<!-- 페이지 설정 부분  -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<link rel="stylesheet" href="http://localhost:8080/coinweb_mobile/css/rangking.css">
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+
+<!-- 저장시에 사용된 인코딩 (파일의 저장 형식) 값을 웹 브라우저에게 알려준다
+	ANSI(euc-kr), utf-8 -->
+<meta charset="UTF-8"/>
+<!-- IE의 호환성 보기 모드 금지 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<!-- 스마트 장치에서 해상도 균일화 처리 -->
+<meta name ="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0
+, maximum-scale=1.0 , user-scalable=no">
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/rangking.css">
 <title>Insert title here</title>
 </head>
 <body>
 
 
 	
-	<!-- ��ŷ  -->
+	<!-- 랭킹  -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid text-center">
 		<p>COINWEB</p>
@@ -24,41 +33,41 @@
 	<div class="container">
 		<div class="col-xs-12 text-center">
 			<div class="freeboard_header_title">
-				<p style="font-weight: bold;">��ŷ</p>
+				<p style="font-weight: bold;">랭킹</p>
 			</div>
 		</div>
 	</div>
 	<hr>
 
-		<!-- ���� -->
+		<!-- 순위 -->
 	
 		<div class="rangking_main ">
 	
 	
-		<!-- 123�� -->
+		<!-- 123위 -->
 			<div class="rangking_1">
-				<img src="http://localhost:8080/coinweb_mobile/img/rank1.png" style="width: 130px; height: 130px;">
-					<h2>1��</h2></br>
-					<p>�г���</p>
-					<p class="p1">���ڻ�: 999,999,999��</p>
-					<p class="p1">���ͷ�: 500%</p></div>
+				<img src="${pageContext.request.contextPath}/img/rank1.png" style="width: 130px; height: 130px;">
+					<h2>1위</h2></br>
+					<p>닉네임</p>
+					<p class="p1">총자산: 999,999,999원</p>
+					<p class="p1">수익률: 500%</p></div>
 					</br>
 					
 			<div class="rangk_top2 rangking_2">
-				<img src="http://localhost:8080/coinweb_mobile/img/rank2.png" style="width: 130px; height: 130px;">
-					<h2>2��</h2></br>
-					<p>�г���</p>
-						<p class="p1">���ڻ�:  999,999,999</p>
-					<p class="p1">���ͷ�: 500%</p></div>
+				<img src="${pageContext.request.contextPath}/img/rank2.png" style="width: 130px; height: 130px;">
+					<h2>2위</h2></br>
+					<p>닉네임</p>
+						<p class="p1">총자산:  999,999,999</p>
+					<p class="p1">수익률: 500%</p></div>
 			<div class="rangk_top2 rangking_3">
-				<img src="http://localhost:8080/coinweb_mobile/img/rank3.png" style="width: 130px; height:130px;">
-					<h2>3��</h2></br>
-					<p>�г���</p>
-							<p class="p1">���ڻ�: 999,999,999</p>
-					<p class="p1">���ͷ�: 500%</p></div>
+				<img src="${pageContext.request.contextPath}/img/rank3.png" style="width: 130px; height:130px;">
+					<h2>3위</h2></br>
+					<p>닉네임</p>
+							<p class="p1">총자산: 999,999,999</p>
+					<p class="p1">수익률: 500%</p></div>
 		
 
-		<!-- ������20�� -->	
+		<!-- 나머지20위 -->	
 			<div class="container">
    
 			    <!--  <div class="table-responsive">-->
@@ -68,112 +77,112 @@
 			  	<thead>
 			  
 			  <tr>
-			      <th id="col-xs-3">����</th>
-			    <th id="col-xs-4">�г���</th>
-			    <th id="col-xs-4">���ڻ�</th>
-			    <th id="col-xs-3">���ͷ�</th>
+			      <th id="col-xs-3">순위</th>
+			    <th id="col-xs-4">닉네임</th>
+			    <th id="col-xs-4">총자산</th>
+			    <th id="col-xs-3">수익률</th>
 			  </tr>
 			  </thead>
 			  
 			<tbody>
 			  <tr class="active">
-			    <td>4��</td>
+			    <td>4위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			  <td>5��</td>
+			  <td>5위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			   <td>6��</td>
+			   <td>6위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  	  <tr>
-			   <td>7��</td>
+			   <td>7위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-				 <td>8��</td>
+				 <td>8위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-		 <td>9��</td>
+		 <td>9위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			 <td>10��</td>
+			 <td>10위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  	  <tr>
-			 	    <td>11��</td>
+			 	    <td>11위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			   	  <td>12��</td>
+			   	  <td>12위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			  	 <td>13��</td>
+			  	 <td>13위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			    	 <td>14��</td>
+			    	 <td>14위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  	  <tr>
-		 	   <td>15��</td>
+		 	   <td>15위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-			    <td>16��</td>
+			    <td>16위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-		     <td>17��</td>
+		     <td>17위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			  <tr>
-	    <td>18��</td>
+	    <td>18위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			   <tr>
-	    <td>19��</td>
+	    <td>19위</td>
 			    <td>Griffin</td>
 			   <td >999,999,999</td>
 			    <td>100%</td>
 			  </tr>
 			     <tr>
-	    <td >20��</td>
+	    <td >20위</td>
 			    <td>Griffin</td>
 			    <td>999,999,999</td>
 			    <td>100%</td>
@@ -191,7 +200,7 @@
 		
 		
 
-	<!-- ��ŷ�� -->
+	<!-- 랭킹끝 -->
 	
 	
 	

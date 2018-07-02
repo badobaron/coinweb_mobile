@@ -21,16 +21,16 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- bootstrap css 3.3.7 -->	
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/bootstrap.min.css">	
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css">	
 
 <!-- bootstrap js 3.3.7 -->	
-<script src="http://localhost:8080/coinweb_mobile/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/header_footer_bar.css">
+	href="${pageContext.request.contextPath}/css/header_footer_bar.css">
 	
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/login_join_passupdate.css">
+	href="${pageContext.request.contextPath}/css/login_join_passupdate.css">
 
 
 <!-- 브라우저에 표시될 문서 제목 -->
@@ -51,15 +51,15 @@
 			<a class="cd-main-nav__item cd-main-nav__item--signup" href="#0"
 				data-signin="signup" onclick="closeNav()">회원가입</a>
 			<hr>
-			<a href="http://localhost:8080/coinweb_mobile/freeboard/freeboard.jsp">자유게시판</a>
+			<a href="${pageContext.request.contextPath}/freeboard.do">자유게시판</a>
 			<hr>
-			<a href="http://localhost:8080/coinweb_mobile/rangking/rangking.jsp">랭킹</a>
+			<a href="${pageContext.request.contextPath}/rangking.do">랭킹</a>
 			<hr>
-			<a href="http://localhost:8080/coinweb_mobile/gide/guide.jsp">이용가이드</a>
+			<a href="${pageContext.request.contextPath}/guide.do">이용가이드</a>
 			<hr>
-			<a href="http://localhost:8080/coinweb_mobile/gide/faq.jsp">FAQ</a>
+			<a href="${pageContext.request.contextPath}/faq.do">FAQ</a>
 			<hr>
-			<a href="http://localhost:8080/coinweb_mobile/mypage/mypage.jsp">마이페이지</a>
+			<a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a>
 			<hr>
 		</div>
 
@@ -67,13 +67,13 @@
 
 		<nav class="navbar-fixed-bottom footer_nav">
 		<div class="container-fluid footer_container">
-			<a class="" href="http://localhost:8080/coinweb_mobile/index.jsp"><i
+			<a class="" href="${pageContext.request.contextPath}/index.do"><i
 				class="fa fa-home"></i><br>
 				<p>홈</p></a> <a
-				href="http://localhost:8080/coinweb_mobile/market_price/market_price.jsp"><i
+				href="${pageContext.request.contextPath}/market_price.do"><i
 				class="fa fa-line-chart"></i><br>
-				<p>시세</p></a> <a href="http://localhost:8080/coinweb_mobile/business/business.jsp"><i class="fa fa-exchange"></i><br>
-				<p>거래</p></a> <a href="http://localhost:8080/coinweb_mobile/wallet/wallet.jsp"><i class="fa fa-credit-card-alt"></i><br>
+				<p>시세</p></a> <a href="${pageContext.request.contextPath}/business.do"><i class="fa fa-exchange"></i><br>
+				<p>거래</p></a> <a href="${pageContext.request.contextPath}/wallet.do"><i class="fa fa-credit-card-alt"></i><br>
 				<p>내지갑</p></a> <span onclick="openNav()"><i class="fa fa-bars"></i><br>
 				<p>더보기</p></span>
 		</div>
@@ -96,7 +96,7 @@
 					data-type="login">
 					<!-- log in form -->
 					<form name="loginForm"
-						action="http://localhost:8080/coinweb/login/login_controller.jsp"
+						action="${pageContext.request.contextPath}/login_controller.do"
 						method="post" class="cd-signin-modal__form">
 						<p class="cd-signin-modal__fieldset">
 
@@ -140,7 +140,7 @@
 					data-type="signup">
 					<!-- sign up form -->
 					<form name="joinForm"
-						action="http://localhost:8080/coinweb/join/join_controller.jsp"
+						action="${pageContext.request.contextPath}/join_controller.do"
 						method="post" class="cd-signin-modal__form">
 
 						<p class="cd-signin-modal__fieldset">
@@ -233,7 +233,7 @@
 				$('#footer_mask').hide();  
 			}
 		</script>
-		<script src="http://localhost:8080/coinweb_mobile/js/main.js"></script>
-		<script src="http://localhost:8080/coinweb_mobile/js/test2.js"></script>
+		<script src="${pageContext.request.contextPath}/js/main.js"></script>
+		<script src="${pageContext.request.contextPath}/js/test2.js"></script>
 </body>
 </html>

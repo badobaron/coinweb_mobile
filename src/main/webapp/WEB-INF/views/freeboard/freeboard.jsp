@@ -16,7 +16,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/freeboard.css">
+	href="${pageContext.request.contextPath}/css/freeboard.css">
 
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
@@ -50,7 +50,7 @@ $(document).ready(function(){
 			</div>
 			<div class="col-xs-4 text-right">
 				<a
-					href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_write.jsp"
+					href="${pageContext.request.contextPath}/freeboard_write.do"
 					data-toggle="tooltip" title="글쓰기"> <i
 					class="fa fa-pencil-square-o" style="font-size: 25px;"></i></a>
 			</div>

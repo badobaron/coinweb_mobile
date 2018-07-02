@@ -23,13 +23,13 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- bootstrap css 3.3.7 -->	
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/bootstrap.min.css">	
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css">	
 <!-- bootstrap js 3.3.7 -->	
-<script src="http://localhost:8080/coinweb_mobile/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
  <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/header_footer_bar.css">
+	href="${pageContext.request.contextPath}/css/header_footer_bar.css">
 	
  
 <!-- include summernote css/js -->
@@ -77,7 +77,7 @@
 			<div class="text-center">	
 				<button id="" type="submit" class="btn btn-comm-con">수정완료</button>
 				<button id=""type="reset" class="btn btn-comm-con">취소</button>
-				<a href="http://localhost:8080/coinweb_mobile/freeboard/freeboard.jsp"><button type="button" class="btn btn-comm-con">게시글</button></a>
+				<a href="${pageContext.request.contextPath}/freeboard.do"><button type="button" class="btn btn-comm-con">게시글</button></a>
 			</div>
 		</form>
 
@@ -94,7 +94,7 @@
 <!-- foooter 부분.. --> 
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-			style="font-size: 40px;">&times;</a> <a href="http://localhost:8080/coinweb_mobile/freeboard/freeboard.jsp">자유게시판</a><hr><a
+			style="font-size: 40px;">&times;</a> <a href="${pageContext.request.contextPath}/freeboard.do">자유게시판</a><hr><a
 			href="#">랭킹</a><hr> <a href="#">이용가이드</a><hr><a href="#">FAQ</a><hr> <a href="#">마이페이지</a><hr>
 	</div>
 
@@ -102,13 +102,13 @@
 	
 	<nav class="navbar-fixed-bottom footer_nav">
 	<div class="container-fluid footer_container">
-		<a class="" href="http://localhost:8080/coinweb_mobile/index.jsp"><i class="fa fa-home"></i><br>
+		<a class="" href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-home"></i><br>
 		<p>홈</p></a> 
-		<a href="http://localhost:8080/coinweb_mobile/market_price/market_price.jsp"><i class="fa fa-line-chart"></i><br>
+		<a href="${pageContext.request.contextPath}/market_price.do"><i class="fa fa-line-chart"></i><br>
 		<p>시세</p></a> 
-		<a href="http://localhost:8080/coinweb_mobile/business/business.jsp"><i class="fa fa-exchange"></i><br>
+		<a href="${pageContext.request.contextPath}/business.do"><i class="fa fa-exchange"></i><br>
 		<p>거래</p></a> 
-		<a href="http://localhost:8080/coinweb_mobile/wallet/wallet.jsp"><i class="fa fa-credit-card-alt"></i><br>
+		<a href="${pageContext.request.contextPath}/wallet.do"><i class="fa fa-credit-card-alt"></i><br>
 		<p>내지갑</p></a> 
 		<span onclick="openNav()"><i class="fa fa-bars"></i><br>
 		<p>더보기</p></span>

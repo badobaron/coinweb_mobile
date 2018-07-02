@@ -18,8 +18,8 @@
 
 <!-- bootstrap css js 3.3.7 / font-awesome 4.7.0 / jquery 3.3.1
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/bootstrap.min.css">	
-<script src="http://localhost:8080/coinweb_mobile/js/bootstrap.min.js"></script>
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css">	
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet"
@@ -29,7 +29,7 @@
 	
 	
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/coin_list.css">
+	href="${pageContext.request.contextPath}/css/coin_list.css">
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
 
@@ -86,7 +86,7 @@ function proc() {
 		<table class="table table-condensed">
 			<thead>
 				<tr>
-					<td class="col-xs-1"><img src="http://localhost:8080/coinweb_mobile/img/btc.png"></td>
+					<td class="col-xs-1"><img src="${pageContext.request.contextPath}/img/btc.png"></td>
 					<td class="col-xs-4">BTC<p class="coin_name">비트코인</p></td>
 					<td class="col-xs-5"><p id="BTC"></p></td>
 					<td class="col-xs-2"><span id="p_BTC" style="color: rgb(67, 160, 71);"></span></td>
@@ -94,56 +94,56 @@ function proc() {
 			</thead>
 			<tbody>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/bch.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
 					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
 					<td><p id="BCH"></p></td>
 					<td><span id="p_BCH" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/eth.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/eth.png"></td>
 					<td>ETH<p class="coin_name">이더리움</p></td>
 					<td><p id="ETH"></p></td>
 					<td><span id="p_ETH" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/etc.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/etc.png"></td>
 					<td>ETC<p class="coin_name">이더리움 클래식</p></td>
 					<td><p id="ETC"></p></td>
 					<td><span id="p_ETC" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/ripple.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/ripple.png"></td>
 					<td>XRP<p class="coin_name">리플</p></td>
 					<td><p id="XRP"></p></td>
 					<td><span id="p_XRP" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/qtum.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
 					<td>QTUM<p class="coin_name">퀀텀</p></td>
 					<td><p id="QTUM"></p></td>
 					<td><span id="p_QTUM" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/litecoin.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/litecoin.png"></td>
 					<td>LTC<p class="coin_name">라이트코인</p></td>
 					<td><p id="LTC"></p></td>
 					<td><span id="p_LTC" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/xmr.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/xmr.png"></td>
 					<td>XMR<p class="coin_name">모네로</p></td>
 					<td><p id="XMR"></p></td>
 					<td><span id="p_XMR" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/btg.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/btg.png"></td>
 					<td>BTG<p class="coin_name">비트코인 골드</p></td>
 					<td><p id="BTG"></p></td>
 					<td><span id="p_BTG"></span></td>
 				</tr>
 			
 					<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/zec.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/zec.png"></td>
 					<td>ZEC<p class="coin_name">제트캐시</p></td>
 					<td><p id="ZEC"></p></td>
 					<td><span id="p_ZEC"></span></td>

@@ -15,7 +15,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/business.css">
+	href="${pageContext.request.contextPath}/css/business.css">
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
 

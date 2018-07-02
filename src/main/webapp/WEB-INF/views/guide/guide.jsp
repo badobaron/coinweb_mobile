@@ -4,9 +4,7 @@
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
 <head>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!--  저장시에 사용된 인코딩 (파일의 저장 형식) 값을 웹 브라우저에게 알려준다 -->
 <style >
 .bs-example{margin-top: 70px;}

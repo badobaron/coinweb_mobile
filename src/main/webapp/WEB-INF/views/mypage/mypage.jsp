@@ -15,7 +15,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/mypage.css">
+	href="${pageContext.request.contextPath}/css/mypage.css">
 
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
@@ -56,8 +56,8 @@
  
 <ul class="list-group">
    <li class="list-group-item"><a  onclick="document.getElementById('id02').style.display='block'" style="width:auto; cursor: pointer;">패스워드 변경 <span class="next">></span></a></li>
-   <li class="list-group-item"><a href="http://localhost:8080/coinweb_mobile/bbs/query_write.jsp">1:1 문의하기 <span class="next">></span></a></li>
-   <li class="list-group-item"><a href="http://localhost:8080/coinweb_mobile/bbs/query_list.jsp">나의 문의내역<span class="next">></span></a></li>
+   <li class="list-group-item"><a href="${pageContext.request.contextPath}/query_write.do">1:1 문의하기 <span class="next">></span></a></li>
+   <li class="list-group-item"><a href="${pageContext.request.contextPath}/query_list.do">나의 문의내역<span class="next">></span></a></li>
   </ul>
 
 </div>

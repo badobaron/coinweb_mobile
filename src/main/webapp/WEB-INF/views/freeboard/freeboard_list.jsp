@@ -16,7 +16,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/freeboard.css">
+	href="${pageContext.request.contextPath}/css/freeboard.css">
 
 <!-- 브라우저에 표시될 문서 제목 -->
 <title>가상화폐 모의거래소 coinweb</title>
@@ -42,10 +42,10 @@ $(document).ready(function(){
 
   <div class="media">
     <div class="media-left">
-      <img src="http://localhost:8080/coinweb_mobile/img/img_avatar1.png" class="media-object" style="width:40px">
+      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
     </div>
     <div class="media-body">
-      <h4 class="media-heading"><a href="http://localhost:8080/coinweb_mobile/freeboard/freeboard_content.jsp">제목을 다는 곳입니다.</a></h4>
+      <h4 class="media-heading"><a href="${pageContext.request.contextPath}/freeboard_content.do">제목을 다는 곳입니다.</a></h4>
       <div class="row">
       	<div class="col-xs-3">userID</div>
       	<div class="col-xs-3 text-right"><i class="fa fa-eye"></i> 0</div>
@@ -59,7 +59,7 @@ $(document).ready(function(){
   
     <div class="media">
     <div class="media-left">
-      <img src="http://localhost:8080/coinweb_mobile/img/img_avatar1.png" class="media-object" style="width:40px">
+      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
@@ -76,7 +76,7 @@ $(document).ready(function(){
   
     <div class="media">
     <div class="media-left">
-      <img src="http://localhost:8080/coinweb_mobile/img/img_avatar1.png" class="media-object" style="width:40px">
+      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
@@ -92,7 +92,7 @@ $(document).ready(function(){
   
       <div class="media">
     <div class="media-left">
-      <img src="http://localhost:8080/coinweb_mobile/img/img_avatar1.png" class="media-object" style="width:40px">
+      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>
@@ -108,7 +108,7 @@ $(document).ready(function(){
   
   <div class="media">
     <div class="media-left">
-      <img src="http://localhost:8080/coinweb_mobile/img/img_avatar1.png" class="media-object" style="width:40px">
+      <img src="${pageContext.request.contextPath}/img/img_avatar1.png" class="media-object" style="width:40px">
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a href="#">제목을 다는 곳입니다.</a></h4>

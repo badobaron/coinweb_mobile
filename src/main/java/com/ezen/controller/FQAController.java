@@ -72,9 +72,9 @@ public class FQAController {
 	}
 
 	// �ּ�����
-	@RequestMapping(value = "FAQ.do", method = RequestMethod.GET)
+	@RequestMapping(value = "faq.do", method = RequestMethod.GET)
 	public String FAQ() {
-		return "/guide/FAQ";
+		return "/guide/faq";
 	}
 
 	@RequestMapping(value = "/view.do", method = RequestMethod.GET)

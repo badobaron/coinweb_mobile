@@ -17,7 +17,7 @@
 	
 	
 <link rel="stylesheet"
-	href="http://localhost:8080/coinweb_mobile/css/wallet.css">
+	href="${pageContext.request.contextPath}/css/wallet.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -47,61 +47,61 @@
 		<table class="table table-condensed">
 			<thead>
 				<tr>
-					<td class="col-xs-1"><img src="http://localhost:8080/coinweb_mobile/img/KRW.png"></td>
+					<td class="col-xs-1"><img src="${pageContext.request.contextPath}/img/KRW.png"></td>
 					<td class="col-xs-4">KRW<p class="coin_name">원화</p></td>
 					<td class="col-xs-7"><span>0 KRW</span></td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/bch.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
 					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
 					<td><span>0 BCH</span></td>
 					
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/bch.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
 					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
 					<td><span>0 BCH</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/eth.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/eth.png"></td>
 					<td>ETH<p class="coin_name">이더리움</p></td>
 					<td><span>0 BTC</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/etc.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/etc.png"></td>
 					<td>ETC<p class="coin_name">이더리움 클래식</p></td>
 					<td><span>0 ETC</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/ripple.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/ripple.png"></td>
 					<td>XRP<p class="coin_name">리플</p></td>
 					<td><span>0 XRP</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/qtum.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
 					<td>QTUM<p class="coin_name">퀀텀</p></td>
 					<td><span>0 QTUM</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/litecoin.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/litecoin.png"></td>
 					<td>LTC<p class="coin_name">라이트코인</p></td>
 					<td><span>0 LTC</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/xmr.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/xmr.png"></td>
 					<td>XMR<p class="coin_name">모네로</p></td>
 					<td><span>0 XMR</span></td>
 				</tr>
 				<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/btg.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/btg.png"></td>
 					<td>BTG<p class="coin_name">비트코인 골드</p></td>
 					<td><span>0 BTG</span></td>
 				</tr>
 			
 					<tr>
-					<td><img src="http://localhost:8080/coinweb_mobile/img/zec.png"></td>
+					<td><img src="${pageContext.request.contextPath}/img/zec.png"></td>
 					<td>ZEC<p class="coin_name">제트캐시</p></td>
 					<td><span>0 ZEC</span></td>
 				</tr>
