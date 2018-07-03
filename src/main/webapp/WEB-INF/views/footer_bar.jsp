@@ -505,8 +505,11 @@ jQuery(document).ready(function(){
 			<hr>
 			<a href="${pageContext.request.contextPath}/faq.do">FAQ</a>
 			<hr>
-			<a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a>
-			<hr>
+			<c:if test="${sid != null}">
+				<a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a>
+				<hr>
+			</c:if>
+			
 		</div>
 
 
