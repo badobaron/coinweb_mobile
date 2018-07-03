@@ -14,13 +14,60 @@
 <meta name ="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0
 , maximum-scale=1.0 , user-scalable=no">
 
-	
+<script>
+var sid = ${sid};
+function numberWithCommas(x) {
+    return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function Floor(n, pos) {
+	var digits = Math.pow(10, pos);
+	var num = Math.floor(n * digits) / digits;
+	return num.toFixed(pos);
+}
+function fShowData() {
+	try {
+		GetWalletList();
+		GetOrderList();
+		GetHistoryList();
+	} catch(e){			
+    } finally {
+        setTimeout("fShowData()", 3000);
+    }
+}
+function GetWalletList(){
+	if(sid!=0){
+		$.ajax({
+			url : '${pageContext.request.contextPath}/wallet_list.do',
+			type :'GET',	
+			data : 'id='+sid,
+			dataType : 'json',
+			success : function(data){
+					$("#krw").html(numberWithCommas(data[0].available)+"원");
+					$("#total").html(numberWithCommas(data[0].tot)+"원");
+					$("#tot").html(numberWithCommas(data[0].tot)+"원");
+					if(data[0].tot == 30000000)
+						$("#profit").html("0.00%");	
+					else if(data[0].tot > 30000000)
+						$("#profit").html("+"+Floor((data[0].tot/30000000)*100-100,2)+"%").css("color","#43A047");
+					else if(data[0].tot < 30000000)
+						$("#profit").html(Floor((data[0].tot/30000000)*100-100,2)+"%");		
+					for(var i=0;i<data.length;i++){
+						avail = (data[i].available).toFixed(4)
+						if (avail == 0) avail = 0;
+						$('#'+data[i].coin).html(avail+"&nbsp;"+data[i].coin);
+					}
+				}	
+			});
+	}
+}	
+
+</script>
 	
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/wallet.css">
 <title>Insert title here</title>
 </head>
-<body>
+<body onload="fShowData()">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid text-center">
@@ -28,14 +75,10 @@
 	</div>
 	</nav>
 
-
-
-
-
 <div class="contatner" style="margin-top:60px; margin-bottom: 60px; ">
 <hr>
 <div class="col-xs-6">총 자산 : </div>
-<div class="col-xs-6 text-right">30,000,000 원</div>
+<div class="col-xs-6 text-right"><p id="total"></p><p id="profit"></p></div>
 
 </div>
 
@@ -49,61 +92,60 @@
 				<tr>
 					<td class="col-xs-1"><img src="${pageContext.request.contextPath}/img/KRW.png"></td>
 					<td class="col-xs-4">KRW<p class="coin_name">원화</p></td>
-					<td class="col-xs-7"><span>0 KRW</span></td>
+					<td class="col-xs-7"><span id="krw"></span></td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
-					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
-					<td><span>0 BCH</span></td>
+					<td><img src="${pageContext.request.contextPath}/img/btc.png"></td>
+					<td>BTC<p class="coin_name">비트코인</p></td>
+					<td><span id="BTC"></span></td>
 					
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
 					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
-					<td><span>0 BCH</span></td>
+					<td><span id="BCH"></span></td>
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/eth.png"></td>
 					<td>ETH<p class="coin_name">이더리움</p></td>
-					<td><span>0 BTC</span></td>
+					<td><span id="ETH"></span></td>
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/etc.png"></td>
 					<td>ETC<p class="coin_name">이더리움 클래식</p></td>
-					<td><span>0 ETC</span></td>
+					<td><span id="ETC"></span></td>
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/ripple.png"></td>
 					<td>XRP<p class="coin_name">리플</p></td>
-					<td><span>0 XRP</span></td>
+					<td><span id="XRP"></span></td>
 				</tr>
 				<tr>
-					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
-					<td>QTUM<p class="coin_name">퀀텀</p></td>
-					<td><span>0 QTUM</span></td>
+					<td><img src="${pageContext.request.contextPath}/img/dash.png"></td>
+					<td>DASH<p class="coin_name">대시</p></td>
+					<td><span id="DASH"></span></td>
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/litecoin.png"></td>
 					<td>LTC<p class="coin_name">라이트코인</p></td>
-					<td><span>0 LTC</span></td>
+					<td><span id="LTC"></span></td>
 				</tr>
 				<tr>
 					<td><img src="${pageContext.request.contextPath}/img/xmr.png"></td>
 					<td>XMR<p class="coin_name">모네로</p></td>
-					<td><span>0 XMR</span></td>
-				</tr>
+					<td><span id="XMR"></span></td>
+				</tr>			
 				<tr>
-					<td><img src="${pageContext.request.contextPath}/img/btg.png"></td>
-					<td>BTG<p class="coin_name">비트코인 골드</p></td>
-					<td><span>0 BTG</span></td>
-				</tr>
-			
-					<tr>
 					<td><img src="${pageContext.request.contextPath}/img/zec.png"></td>
 					<td>ZEC<p class="coin_name">제트캐시</p></td>
-					<td><span>0 ZEC</span></td>
+					<td><span id="ZEC"></span></td>
+				</tr>
+				<tr>
+					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
+					<td>QTUM<p class="coin_name">퀀텀</p></td>
+					<td><span id="QTUM"></span></td>
 				</tr>
 
 			</tbody>

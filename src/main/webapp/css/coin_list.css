@@ -7,13 +7,17 @@
 	height: 25px;
 }
 
-
+.index_cointable{
+	z-index: 3 !important;
+}
 
 .index_cointable td p{
 	
 }
 
-
+.coinlist{
+	z-index: 10 !important;
+}
 
 .coinlist table td:nth-child(2){
 	font-weight: bold;

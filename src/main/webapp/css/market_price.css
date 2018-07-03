@@ -94,10 +94,55 @@ thead tr td{
 	margin:16px;
 	text-align:center;
 }
+
 .coinWallet{font-size:13px; text-align:center; color:#808080;}
+
+.coinWallet td{height:30px;}
 
 .coinWallet_2{padding-top:15px;}
 
 @media all and (max-width:340px){
 .coinWallet{font-size:11px; text-align:center;}
+}
+
+#container{
+	overflow:hidden;
+    min-height:400px;
+    min-width: 310px;
+}
+
+.td_bar span{
+	position: relative;
+	z-index: 2;
+}
+.ask_per_bar{
+	position: absolute !important;
+	right: 66.6%;
+	height: 20px;
+	z-index: 1 !important;
+	background-color: #bae0ff;
+}
+
+
+.bid_per_bar{
+	position: absolute !important;
+	left: 66.7%;
+	height: 20px;
+	z-index: 1 !important;
+	background-color: #ffd7e3;
+}
+
+.modal-backdrop{z-index: 1050 !important;}
+.modal{z-index: 1060 !important;}
+
+.btn-primary1 {
+    color: #fff;
+    background-color: #337ab7;
+    border:none;
+ 
+}
+.btn-danger1 {
+    color: #fff;
+    background-color: Tomato;
+    border:none;
 }

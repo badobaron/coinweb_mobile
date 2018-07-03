@@ -38,7 +38,7 @@
 
 function bithumb (){
 	$.get('https://api.bithumb.com/public/ticker/ALL', function(data) {
-		var bithumb_array = ['BTC','ETH','DASH','LTC','ETC','XRP','BCH','XMR','QTUM','ZEC','BTG','EOS'];
+		var bithumb_array = ['BTC','BCH','ETH','ETC','DASH','LTC','XRP','XMR','ZEC','QTUM'];
 		for (var key in bithumb_array){
 			var bithumb_now = bithumb_array[key];
 			var opening_price = data['data'][bithumb_now]['opening_price'];
@@ -72,12 +72,19 @@ function proc() {
     }
 }
 
+if(window.addEventListener){
+	window.addEventListener("load", proc, false);
+	window.addEventListener("load", fShowData, false);
+} else{
+	window.addEventListener("load", proc);
+	window.addEventListener("load", fShowData);
+}
 
 </script>
 
 </head>
 
-<body onload="proc()">
+<body>
 	
 
 
@@ -85,7 +92,7 @@ function proc() {
 	<div class="container coinlist">
 		<table class="table table-condensed">
 			<thead>
-				<tr>
+				<tr class="coin_btn coin_sec" data-coin="BTC" data-cname="비트코인">
 					<td class="col-xs-1"><img src="${pageContext.request.contextPath}/img/btc.png"></td>
 					<td class="col-xs-4">BTC<p class="coin_name">비트코인</p></td>
 					<td class="col-xs-5"><p id="BTC"></p></td>
@@ -93,60 +100,59 @@ function proc() {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr class="coin_btn" data-coin="BCH" data-cname="비트코인 캐시">
 					<td><img src="${pageContext.request.contextPath}/img/bch.png"></td>
 					<td>BCH<p class="coin_name">비트코인 캐시</p></td>
 					<td><p id="BCH"></p></td>
 					<td><span id="p_BCH" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
+				<tr class="coin_btn" data-coin="ETH" data-cname="이더리움">
 					<td><img src="${pageContext.request.contextPath}/img/eth.png"></td>
 					<td>ETH<p class="coin_name">이더리움</p></td>
 					<td><p id="ETH"></p></td>
 					<td><span id="p_ETH" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
+				<tr class="coin_btn" data-coin="ETC" data-cname="이더리움 클래식">
 					<td><img src="${pageContext.request.contextPath}/img/etc.png"></td>
 					<td>ETC<p class="coin_name">이더리움 클래식</p></td>
 					<td><p id="ETC"></p></td>
 					<td><span id="p_ETC" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
+				<tr class="coin_btn" data-coin="XRP" data-cname="리플">
 					<td><img src="${pageContext.request.contextPath}/img/ripple.png"></td>
 					<td>XRP<p class="coin_name">리플</p></td>
 					<td><p id="XRP"></p></td>
 					<td><span id="p_XRP" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
-					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
-					<td>QTUM<p class="coin_name">퀀텀</p></td>
-					<td><p id="QTUM"></p></td>
-					<td><span id="p_QTUM" style="color: rgb(67, 160, 71);"></span></td>
+				<tr class="coin_btn" data-coin="DASH" data-cname="대시">
+					<td><img src="${pageContext.request.contextPath}/img/dash.png"></td>
+					<td>DASH<p class="coin_name">대시</p></td>
+					<td><p id="DASH"></p></td>
+					<td><span id="p_DASH" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
+				<tr class="coin_btn" data-coin="LTC" data-cname="라이트코인">
 					<td><img src="${pageContext.request.contextPath}/img/litecoin.png"></td>
 					<td>LTC<p class="coin_name">라이트코인</p></td>
 					<td><p id="LTC"></p></td>
 					<td><span id="p_LTC" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
+				<tr class="coin_btn" data-coin="XMR" data-cname="모네로">
 					<td><img src="${pageContext.request.contextPath}/img/xmr.png"></td>
 					<td>XMR<p class="coin_name">모네로</p></td>
 					<td><p id="XMR"></p></td>
 					<td><span id="p_XMR" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
-				<tr>
-					<td><img src="${pageContext.request.contextPath}/img/btg.png"></td>
-					<td>BTG<p class="coin_name">비트코인 골드</p></td>
-					<td><p id="BTG"></p></td>
-					<td><span id="p_BTG"></span></td>
-				</tr>
-			
-					<tr>
+				<tr class="coin_btn" data-coin="ZEC" data-cname="제트캐시">
 					<td><img src="${pageContext.request.contextPath}/img/zec.png"></td>
 					<td>ZEC<p class="coin_name">제트캐시</p></td>
 					<td><p id="ZEC"></p></td>
-					<td><span id="p_ZEC"></span></td>
+					<td><span id="p_ZEC" style="color: rgb(67, 160, 71);"></span></td>
+				</tr>
+				<tr class="coin_btn" data-coin="QTUM" data-cname="퀀텀">
+					<td><img src="${pageContext.request.contextPath}/img/qtum.png"></td>
+					<td>QTUM<p class="coin_name">퀀텀</p></td>
+					<td><p id="QTUM"></p></td>
+					<td><span id="p_QTUM" style="color: rgb(67, 160, 71);"></span></td>
 				</tr>
 
 			</tbody>

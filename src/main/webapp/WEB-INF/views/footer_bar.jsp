@@ -32,7 +32,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/login_join_passupdate.css">
 
-
+<%-- <script src="${pageContext.request.contextPath}/js/setInterval.js"></script> --%>
 
 <script>
 jQuery(document).ready(function(){

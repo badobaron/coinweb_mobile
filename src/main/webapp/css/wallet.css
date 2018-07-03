@@ -13,7 +13,9 @@
 	
 }
 
-
+#profit{
+	font-size:13px;
+}
 
 table td:nth-child(2){
 	font-weight: bold;
