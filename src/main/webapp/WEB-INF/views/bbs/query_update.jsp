@@ -17,6 +17,9 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 
+ <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/header_footer_bar.css">
+	
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- font-awesome 4.7.0 -->
@@ -25,20 +28,20 @@
 <!-- bootstrap css 3.3.7 -->	
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/bootstrap.min.css">	
+	  <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/freeboard.css">
 <!-- bootstrap js 3.3.7 -->	
-<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
- <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
- <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
- <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/header_footer_bar.css">
-	
- <script>
-$(document).ready(function(){
-	
-	
-	$("#contentBtn").click(function(){
-			
-		if($("#bbsTitle").val() == ""){
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+<script>
+$(document).ready(function() {
+
+	$("#update").click(function() {
+
+		if ($("#bbsTitle").val() == "") {
 			alert("제목을 입력하세요");
 			$("#bbsTitle").focus();
 			return false;
@@ -47,66 +50,49 @@ $(document).ready(function(){
 			  $('#summernote').summernote('focus');
 			  return false;
 		}
-		writeform.submit();
-		
+		updateform.submit();
+
 	});
 	
 	$("#reset").click(function(){
 		$("#summernote").summernote("reset");
 	});
 });
-	</script>
- 
-<!-- include summernote css/js -->
-
-
-
-<!-- 브라우저에 표시될 문서 제목 -->
-<title>가상화폐 모의거래소 coinweb</title>
-
-
-
+</script>
 </head>
+
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid text-center">
-	<p>COINWEB</p>
-	</div>
-	</nav>
-	
-		<!-- 게시판헤더 -->
-	
+<!-- 게시판 헤더 -->
 
 
 
-	<div id="box11">
-	<form name="writeform" method="post" action="${pageContext.request.contextPath}/writeAction.do">
-	<div class="container">
-	<hr style="margin-top: 60px">
+		<form id="freeboard_form" class="freeboard_form" action="${pageContext.request.contextPath}/updateAction.do" method="post">
+			<div class="container" style="margin-top: 40px;">
+		<hr>
 		<div class="col-xs-12 text-center">
 			<div class="freeboard_header_title">
-				<p style="font-weight: bold;">문의하기</p>
-					<div class="text-center" style="margin-top: 15px">	
-				<button id="contentBtn" type="submit" class="btn btn-comm-con">등록</button>
-				<button id="contentBtnReset"type="reset" class="btn btn-comm-con">취소</button>
+				<p style="font-weight: bold;">글쓰기</p>
+				<div class="text-center">	
+				<button id="update" type="submit" class="btn btn-comm-con">수정완료</button>
+				<button id=""type="reset" class="btn btn-comm-con">취소</button>
 				<a href="${pageContext.request.contextPath}/query_list.do"><button type="button" class="btn btn-comm-con">게시글</button></a>
 			</div>
 			</div>
 		</div>
 	</div>
 	<hr>
-		<div class="bbsboard_table1">
-				<div class="form-group1">
-				<input type="text" class="title form-control" id="bbsTitle" name="bbsTitle" placeholder="제목을 입력하세요">
-				</div>
-				 <input type="hidden" name="userID" id="userID" value="${sid} "> 
-				<input type="hidden" name="email" id="email" value="${email}">
+			<!-- 작성자 -->
+			<div class="form-group">
+				<input type="text" class="form_control" id="form_control" value=${ vo.bbsTitle} name="bbsTitle" id="summernote">
+			</div>
+			<input type="hidden" name="bbsID" id="bbsID" value="${vo.bbsID}"> 
 
-				<textarea class="content" name="bbsContent" id="summernote"></textarea>
-		</div>
-	
+	<textarea class="content" name="bbsContent" id="summernote">${vo.bbsContent}</textarea>
+			
+			
 		</form>
+
 	</div>
 
 

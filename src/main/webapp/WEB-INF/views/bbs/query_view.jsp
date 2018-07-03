@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  import="coinweb.vo.BoardVO, coinweb.dao.BoardDAO, java.util.ArrayList"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="ko">
@@ -19,9 +20,14 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/freeboard.css">
 
-<!-- 브라우저에 표시될 문서 제목 -->
-<title>가상화폐 모의거래소 coinweb</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<!-- 리플 -->
+<script src="http://localhost:8080/coinweb/js/MyAjax.js"></script>
+
+
 </head>
+
+
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,10 +35,11 @@
 		<p>COINWEB</p>
 	</div>
 	</nav>
-	
-		<!-- 게시판헤더 -->
-	<hr style="margin-top: 60px;">
-	<div class="container">
+
+
+	<!-- 게시판헤더 -->
+	<div class="container" style="margin-top: 40px;">
+		<hr>
 		<div class="col-xs-12 text-center">
 			<div class="freeboard_header_title">
 				<p style="font-weight: bold;">문의하기</p>
@@ -44,60 +51,86 @@
 
 
 
-
 	<div class="container">
 
 		<div class="freeboard_content_title">
-			<p class="freeboard_content_title_text">제목</p>
-			<p class="freeboard_content_title_date">2016.10.5</p>
-		</div>
-		<div class="freeboard_content_author">
-			<p class="freeboard_content_author_name">사용자</p>
-			<div class="freeboard_content_author_info">
-			</div></div>
-			
-
-		<div class="freeboard_content">
-			<p>테스트 화면입니다.</p>
+		<p>${vo.bbsTitle}</p>
+					<p align="right" id="c_date">${vo.fdate}</p>
+					<div id="c_id">
+							<input type="hidden" name="email" id="email" value="${email}">
+				</div>
+				</div>
+				
+				<div id="c_content">
+					<tr>
+					<hr>
+						<td style="margin-top: 15px" id="bc">${vo.bbsContent}</td>
+					</tr>
+					<hr>
 		</div>
 
 
 		<br>
 		<div class="text-center">
 
-			<a href="#"><button type="button" class="btn btn-comm-con btn-xs">이전
-					페이지</button></a> <a
-				href="${pageContext.request.contextPath}/freeboard_update.do"><button
-					type="button" class="btn btn-comm-con btn-xs">수정하기</button></a> <a
-				href="#"><button type="button" class="btn btn-comm-con btn-xs">바로삭제</button></a>
-			<a
-				href="${pageContext.request.contextPath}/freeboard.do"><button
-					type="button" class="btn btn-xs">게시글</button></a>
+			
+		<a
+					href="${pageContext.request.contextPath}/update.do?bbsID=${vo.bbsID}"><button
+						type="button" class="btn btn-comm-con btn-xs">수정하기</button></a>
+				
+				<a href="${pageContext.request.contextPath}/deleteAction.do?bbsID=${vo.bbsID }"><button type="button"
+						class="btn btn-comm-con btn-xs">바로삭제</button></a>
+		
+			<a href="${pageContext.request.contextPath}/query_list.do"><button
+					type="button" class="btn btn-xs">목록으로</button></a>
 		</div>
 
-
-
-
-
-
-
-
-
 		<br>
+	<!-- start of reply -->
+			<div class="container">
+			
+							
+				
+						
+							
+			
+			
+				
+				</div>
+				<!-- end of reply -->	
 
 
 	</div>
+	<br><br><br><br><br><br>
 
 
+<jsp:include page="../footer_bar.jsp" />
+
+<script>
+var sid = '<c:out value="${sid}"/>';
+
+(function($){
+	
+	$.fn.indexSearch = function(data){	
+		return $(this).attr("id").slice($(this).attr("class").length);
+	};	
+})(jQuery);
+
+	$(function(){		
+		
+		$(".reply-write-content").click(function(){
+			if(sid==""){
+				alert("로그인 후 이용하실수 있습니다.");
+				$(".reply-write-content").css('cursor', 'default');
+				$(".reply-write-content").blur();
+			}
+		});
+		
+
+	
 
 
-
-
-
-
-
-
-	<jsp:include page="../footer_bar.jsp" />
+</script>
 
 </body>
 </html>
