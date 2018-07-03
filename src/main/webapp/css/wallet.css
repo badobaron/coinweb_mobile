@@ -45,3 +45,37 @@ table td:nth-child(4){
 	font-weight: normal !important;
 	color: #A4A4A4 !important;
 }
+
+.coinlist{
+	position:relative;
+	z-index:2;
+}
+
+.login_check{
+	position: absolute;  
+	z-index:3;  
+	background-color:#fff; 
+	height:100%;
+	width:100%;
+	opacity:0.93;
+	text-align:center;
+}
+.login_check span{
+	display: inline-block;
+	font-size:4.5vw;
+	height:100%;
+	padding-top:50%;
+}
+.login_check button{
+	margin-top:10px;
+	font-size:3.3vw;
+	width:35%;
+	border-color:#0487e4;
+	color:#0487e4;
+}
+
+.btn-default:hover{
+	border-color:#0487e4 !important;
+	color:#0487e4 !important;
+	background-color:#80c2e854 !impartant;
+}

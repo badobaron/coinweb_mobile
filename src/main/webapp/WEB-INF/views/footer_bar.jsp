@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
@@ -481,12 +482,21 @@ jQuery(document).ready(function(){
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
 				style="font-size: 40px;">&times;</a> 
-			<a class="cd-main-nav__item cd-main-nav__item--signin" href="#0"
-				data-signin="login" onclick="closeNav()">로그인</a>
-			<hr>
-			<a class="cd-main-nav__item cd-main-nav__item--signup" href="#0"
-				data-signin="signup" onclick="closeNav()">회원가입</a>
-			<hr>
+			<c:choose>
+				<c:when test="${sid == null}">
+					<a class="cd-main-nav__item cd-main-nav__item--signin" href="#0"
+						data-signin="login" onclick="closeNav()">로그인</a>
+					<hr>
+					<a class="cd-main-nav__item cd-main-nav__item--signup" href="#0"
+						data-signin="signup" onclick="closeNav()">회원가입</a>
+					<hr>
+				</c:when>
+				<c:when test="${sid != null}">
+					<a class="cd-main-nav__item cd-main-nav__item--signin"
+						href="${pageContext.request.contextPath}/logout.do">로그아웃</a>
+					<hr>
+				</c:when>
+			</c:choose>
 			<a href="${pageContext.request.contextPath}/freeboard.do">자유게시판</a>
 			<hr>
 			<a href="${pageContext.request.contextPath}/rangking.do">랭킹</a>

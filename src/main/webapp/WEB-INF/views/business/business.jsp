@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
@@ -528,99 +529,112 @@ if(window.addEventListener){
 							<td class="td_bar"><p><span id="bid_quantity9"></span><span id="bid_per_bar9" class="bid_per_bar"></span></p></td>
 						</tr>
 					</table></td>
-					<td class="fix">
-						<div class="tabs">
-							<ul class="nav nav-tabs" role="tablist">
-								<li class="active buy"><a href="#buy" data-toggle="tab"  style="color: red;">매수</a></li>
-								<li class="sell"><a href="#sell" data-toggle="tab" style="color: blue;">매도</a></li>
-							</ul>
-							<div class="tab-content">
-								<div class="tab-pane fade in active" id="buy">
-									<div class="trade">
-										<table class="trade_table">
-											<tr>
-												<td colspan="2">지정가 주문</td>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="number" class="form-control order_price" id="buy_price" placeholder="주문가격" value="0" onkeyup="fCalcData()" onblur="fCalcData()" onChange="fCalcData()"></td>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control order_amount" id="buy_unit" placeholder="매수수량" onkeyup="fCalcData()" onblur="fCalcData()"></td>
-											</tr>
-											<tr>
-												<td class="percent" colspan="2">
-													<button class="btn btn-sm btn-default btn_buy_percent" data-pct="30" type="button">
-	                                                    30%
-	                                                </button>
-	                                                <button class="btn btn-sm btn-default btn_buy_percent" data-pct="50" type="button">
-	                                                    50%
-	                                                </button>
-	                                                <button class="btn btn-sm btn-default max_btn btn_buy_percent" data-pct="100" type="button">
-	                                                 	최대
-	                                                </button>
-	                                  			</td>
-											</tr>
-											<tr>
-												<td class="sell_price_text" colspan="2">
-													<p>최대 구매 가능 수량 <span id="max_buy_coin">0</span></p>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2"><button type="button" class="btn" id="btn_buy">매수하기</button></td>
-											</tr>
-											<tr>
-												<td class="td_left">매수금액</td>
-												<td class="td_right"><span id="total_buy_price"></span></td>
-											</tr>
-											<tr>
-												<td class="td_left">총 매수량</td>
-												<td class="td_right"><span id="total_buy_coin"></span></td>
-											</tr>
-										</table>
+					<td>
+						<c:if test="${sid eq vo.id}">
+						<div class="login_check">
+							<span>로그인 후에 거래가 가능합니다.
+								<!-- <p><button type="button" class="btn btn-default">
+								<a class="cd-main-nav__item cd-main-nav__item--signin" href="#0"
+								data-signin="login" onclick="closeNav()">로그인</a>
+								</button>
+								</p> -->
+							</span>
+						</div>
+						</c:if>
+						<div class="fix">
+							<div class="tabs">
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="active buy"><a href="#buy" data-toggle="tab"  style="color: red;">매수</a></li>
+									<li class="sell"><a href="#sell" data-toggle="tab" style="color: blue;">매도</a></li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane fade in active" id="buy">
+										<div class="trade">
+											<table class="trade_table">
+												<tr>
+													<td colspan="2">지정가 주문</td>
+												</tr>
+												<tr>
+													<td colspan="2"><input type="number" class="form-control order_price" id="buy_price" placeholder="주문가격" value="0" onkeyup="fCalcData()" onblur="fCalcData()" onChange="fCalcData()"></td>
+												</tr>
+												<tr>
+													<td colspan="2"><input type="text" class="form-control order_amount" id="buy_unit" placeholder="매수수량" onkeyup="fCalcData()" onblur="fCalcData()"></td>
+												</tr>
+												<tr>
+													<td class="percent" colspan="2">
+														<button class="btn btn-sm btn-default btn_buy_percent" data-pct="30" type="button">
+		                                                    30%
+		                                                </button>
+		                                                <button class="btn btn-sm btn-default btn_buy_percent" data-pct="50" type="button">
+		                                                    50%
+		                                                </button>
+		                                                <button class="btn btn-sm btn-default max_btn btn_buy_percent" data-pct="100" type="button">
+		                                                 	최대
+		                                                </button>
+		                                  			</td>
+												</tr>
+												<tr>
+													<td class="sell_price_text" colspan="2">
+														<p>최대 구매 가능 수량 <span id="max_buy_coin">0</span></p>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2"><button type="button" class="btn" id="btn_buy">매수하기</button></td>
+												</tr>
+												<tr>
+													<td class="td_left">매수금액</td>
+													<td class="td_right"><span id="total_buy_price"></span></td>
+												</tr>
+												<tr>
+													<td class="td_left">총 매수량</td>
+													<td class="td_right"><span id="total_buy_coin"></span></td>
+												</tr>
+											</table>
+										</div>
 									</div>
-								</div>
-								<div class="tab-pane fade" id="sell">
-									<div class="trade">
-										<table class="trade_table">
-											<tr>
-												<td colspan="2">지정가 주문</td>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="number" class="form-control order_price" id="sell_price" placeholder="주문가격" value="0" onkeyup="fCalcData()" onblur="fCalcData()" onChange="fCalcData()"></td>
-											</tr>
-											<tr>
-												<td colspan="2"><input type="text" class="form-control order_amount" id="sell_unit" placeholder="매수수량" onkeyup="fCalcData()" onblur="fCalcData()"></td>
-											</tr>
-											<tr>
-												<td class="percent" colspan="2">
-													<button class="btn btn-sm btn-default btn_sell_percent" data-pct="30" type="button">
-	                                                    30%
-	                                                </button>
-	                                                <button class="btn btn-sm btn-default btn_sell_percent" data-pct="50" type="button">
-	                                                    50%
-	                                                </button>
-	                                                <button class="btn btn-sm btn-default max_btn btn_sell_percent" data-pct="100" type="button">
-	                                                 	최대
-	                                                </button>
-	                                  			</td>
-											</tr>
-											<tr>
-												<td class="buy_price_text" colspan="2">
-													<p>최대 판매 가능 금액 <span id="max_sell_price">0</span></p>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2"><button type="button" class="btn" id="btn_sell">매도하기</button></td>
-											</tr>
-											<tr>
-												<td class="td_left" >매도금액</td>
-												<td class="td_right"><span id="total_sell_price"></span></td>
-											</tr>
-											<tr>
-												<td class="td_left">총 매도량</td>
-												<td class="td_right"><span id="total_sell_coin"></span></td>
-											</tr>
-										</table>
+									<div class="tab-pane fade" id="sell">
+										<div class="trade">
+											<table class="trade_table">
+												<tr>
+													<td colspan="2">지정가 주문</td>
+												</tr>
+												<tr>
+													<td colspan="2"><input type="number" class="form-control order_price" id="sell_price" placeholder="주문가격" value="0" onkeyup="fCalcData()" onblur="fCalcData()" onChange="fCalcData()"></td>
+												</tr>
+												<tr>
+													<td colspan="2"><input type="text" class="form-control order_amount" id="sell_unit" placeholder="매수수량" onkeyup="fCalcData()" onblur="fCalcData()"></td>
+												</tr>
+												<tr>
+													<td class="percent" colspan="2">
+														<button class="btn btn-sm btn-default btn_sell_percent" data-pct="30" type="button">
+		                                                    30%
+		                                                </button>
+		                                                <button class="btn btn-sm btn-default btn_sell_percent" data-pct="50" type="button">
+		                                                    50%
+		                                                </button>
+		                                                <button class="btn btn-sm btn-default max_btn btn_sell_percent" data-pct="100" type="button">
+		                                                 	최대
+		                                                </button>
+		                                  			</td>
+												</tr>
+												<tr>
+													<td class="buy_price_text" colspan="2">
+														<p>최대 판매 가능 금액 <span id="max_sell_price">0</span></p>
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2"><button type="button" class="btn" id="btn_sell">매도하기</button></td>
+												</tr>
+												<tr>
+													<td class="td_left" >매도금액</td>
+													<td class="td_right"><span id="total_sell_price"></span></td>
+												</tr>
+												<tr>
+													<td class="td_left">총 매도량</td>
+													<td class="td_right"><span id="total_sell_coin"></span></td>
+												</tr>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -694,6 +708,7 @@ if(window.addEventListener){
 	<jsp:include page="../footer_bar.jsp" />
 	
 	<script>
+		var sid = '${sid}';
 		function wrapWindowByMask2(){
 		    //화면의 높이와 너비를 구한다.
 		    var maskHeight = $(document).height();  
@@ -708,8 +723,12 @@ if(window.addEventListener){
 		}
 	
 		function openNav2() {
-			document.getElementById("history").style.height = "40%";
-			wrapWindowByMask2();
+			if(sid==""){
+				alert("로그인 후 이용하실수 있습니다.");
+			}else{
+				document.getElementById("history").style.height = "40%";
+				wrapWindowByMask2();
+			}
 		}
 	
 		function closeNav2() {

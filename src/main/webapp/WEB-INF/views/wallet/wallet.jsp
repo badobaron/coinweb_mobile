@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
@@ -84,8 +85,18 @@ function GetWalletList(){
 
 <hr>
 
-
 	<session class="index_cointable">
+	<c:if test="${sid eq vo.id}">
+	<div class="login_check">
+		<span>로그인 후에 조회가 가능합니다.
+			<!-- <p><button type="button" class="btn btn-default">
+			<a class="cd-main-nav__item cd-main-nav__item--signin" href="#0"
+			data-signin="login" onclick="closeNav()">로그인</a>
+			</button>
+			</p> -->
+		</span>
+	</div>
+	</c:if>
 	<div class="container coinlist">
 		<table class="table table-condensed">
 			<thead>

@@ -35,6 +35,14 @@
 }
 
 
+.login_check{
+	position:relative;  
+	z-index:1;  
+	background-color:#fff;  
+	visibility:visible;
+	height:100%;
+	width:100%;
+}
 
 
 
