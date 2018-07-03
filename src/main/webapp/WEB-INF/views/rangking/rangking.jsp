@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="coinweb.dao.*, coinweb.vo.*"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
@@ -15,6 +16,7 @@
 , maximum-scale=1.0 , user-scalable=no">
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rangking.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">	
 <title>Insert title here</title>
 </head>
 <body>
@@ -48,153 +50,69 @@
 			<div class="rangking_1">
 				<img src="${pageContext.request.contextPath}/img/rank1.png" style="width: 130px; height: 130px;">
 					<h2>1위</h2></br>
-					<p>닉네임</p>
-					<p class="p1">총자산: 999,999,999원</p>
-					<p class="p1">수익률: 500%</p></div>
-					</br>
+					<c:forEach items="${list}" var="vo1" begin="0" end="0">
+				<p><font color=blue size=4px>${vo1.name}</font></p> </br>
+				<p>총자산: <font color=red size=3px;>${vo1.money}</font>원</p>
+				<p>수익률 : <font color=red size=3>${vo1.profit}</font>%</p>
+			</c:forEach>
+					</br></div>
 					
 			<div class="rangk_top2 rangking_2">
 				<img src="${pageContext.request.contextPath}/img/rank2.png" style="width: 130px; height: 130px;">
 					<h2>2위</h2></br>
-					<p>닉네임</p>
-						<p class="p1">총자산:  999,999,999</p>
-					<p class="p1">수익률: 500%</p></div>
+			<c:forEach items="${list}" var="vo2" begin="1" end="1">
+				<p><font color=blue  size=4px>${vo2.name}</font></p> </br>
+				<p>총자산:<font color=red size=3px;>${vo2.money}</font>원</p>
+				<p>수익률 : <font color=red >${vo2.profit}</font>%</p>
+			</c:forEach></div>
 			<div class="rangk_top2 rangking_3">
 				<img src="${pageContext.request.contextPath}/img/rank3.png" style="width: 130px; height:130px;">
 					<h2>3위</h2></br>
-					<p>닉네임</p>
-							<p class="p1">총자산: 999,999,999</p>
-					<p class="p1">수익률: 500%</p></div>
+				<c:forEach items="${list}" var="vo3" begin="2" end="2">
+				<p><font color=blue  size=4px>${vo3.name}</font></p> </br>
+				<p>총자산:<font color=red size=3px;>${vo3.money}</font>원</p>
+				<p>수익률 : <font color=red>${vo3.profit}</font>%</p>
+			</c:forEach></div>
 		
 
 		<!-- 나머지20위 -->	
-			<div class="container">
+		<div class="container">
    
-			    <!--  <div class="table-responsive">-->
+			   <!--<div class="table-responsive">  -->
 		
-			  	<table class=" table table-striped rangking_4_20">
+			  	<table class="  table-striped rangking_4_20">
 			  	
 			  	<thead>
-			  
 			  <tr>
-			      <th id="col-xs-3">순위</th>
+			      <th id="col-xs-2">순위</th>
 			    <th id="col-xs-4">닉네임</th>
 			    <th id="col-xs-4">총자산</th>
 			    <th id="col-xs-3">수익률</th>
 			  </tr>
 			  </thead>
 			  
+			  
+			  
 			<tbody>
-			  <tr class="active">
-			    <td>4위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
+			
+ <tr class=" table active">
+			 <c:forEach items="${list}" var="vo" begin="3" end="21">
+			        <td>${vo.rno}위</td>
+			    <td><font color=blue>${vo.name}</font></td>
+			    <td><font color=red>${vo.money}</font>원</td>
+			    <td><font color=red>${vo.profit}</font>%</td>
 			  </tr>
-			  <tr>
-			  <td>5위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			   <td>6위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  	  <tr>
-			   <td>7위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-				 <td>8위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-		 <td>9위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			 <td>10위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  	  <tr>
-			 	    <td>11위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			   	  <td>12위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			  	 <td>13위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			    	 <td>14위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  	  <tr>
-		 	   <td>15위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-			    <td>16위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-		     <td>17위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			  <tr>
-	    <td>18위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			   <tr>
-	    <td>19위</td>
-			    <td>Griffin</td>
-			   <td >999,999,999</td>
-			    <td>100%</td>
-			  </tr>
-			     <tr>
-	    <td >20위</td>
-			    <td>Griffin</td>
-			    <td>999,999,999</td>
-			    <td>100%</td>
-			  </tr>
+		  </c:forEach>
+		
+		
+		
 			 
 		
 			  </tbody>
 			  </table>
 
 			  		</div>
-			</div>
-		
+				
 		
 		
 		

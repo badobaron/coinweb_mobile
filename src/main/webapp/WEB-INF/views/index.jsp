@@ -36,6 +36,21 @@
 		<p>COINWEB</p>
 	</div>
 	</nav>
+
+	<div class="index_header text-center">
+		
+		<div class="index_header_text">
+		<p>도전! 암호화폐 모의거래!</p>
+		<i class="fa fa-rocket" aria-hidden="true"></i>
+		<br>
+		<div class="index_headerp">
+		<p>실제 거래소의 실시간 데이터에 기반하여</p> <p>모의 거래를 해보세요!
+		</p>
+		</div>
+		</div>
+	</div>
+
+
 	<div class="coinlist">
 		<jsp:include page="coin_list.jsp" />
 	</div>
@@ -44,25 +59,22 @@
 
 	<!-- 랭킹 -->
 	<div class="index_freeboard_list container">
-		<a href="${pageContext.request.contextPath}/rangking.do"><h2>랭킹
-				></h2></a>
+		<a href="${pageContext.request.contextPath}/rangking.do"><h2>랭킹 ></h2></a>
 	</div>
 	<br>
 
 
-	<!-- 게시판미리보기 -->
+	<!-- 게시판 -->
 	<div class="index_freeboard_list container">
-		<a href="${pageContext.request.contextPath}/freeboard.do"><h2>자유게시판
-				></h2></a>
+		<a href="${pageContext.request.contextPath}/freeboard.do"><h2>자유게시판 ></h2></a>
+	</div>
+	<br>
+	
+	<!-- 게시판 -->
+	<div class="index_freeboard_list container">
+		<a href="${pageContext.request.contextPath}/guide.do"><h2>이용가이드 ></h2></a>
 	</div>
 
-
-	<div class="container">
-		<br>
-		<jsp:include page="freeboard/freeboard_list.jsp" />
-	</div>
-
-	<hr style="border: 0; height: 30px; background: #f6f6f6;">
 	<br>
 	<br>
 	<br>

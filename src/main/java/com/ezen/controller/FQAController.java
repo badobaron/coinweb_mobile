@@ -22,7 +22,7 @@ public class FQAController {
 	@Autowired
 	SqlSessionTemplate sqlSession;
 
-	@RequestMapping(value = "bbs.do", method = RequestMethod.GET)
+@RequestMapping(value = "query_list", method = RequestMethod.GET)
 	public ModelAndView bbs(String rpage, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -54,30 +54,31 @@ public class FQAController {
 		}
 		ArrayList<bbsVO> list = dao.getResultList(startCount, pageSize, sid);
 		mv.addObject("list", list);
-		mv.setViewName("/FQA/bbs");
+		mv.setViewName("bbs/query_list");
 		mv.addObject("list", list);
 		mv.addObject("rpage", rpage);
 		mv.addObject("dbCount", dbCount);
 		return mv;
 	}
-
-	@RequestMapping(value = "write.do", method = RequestMethod.GET)
+	@RequestMapping(value = "query_write.do", method = RequestMethod.GET)
 	public String wirite() {
-		return "/FQA/write";
+		
+		return "/bbs/query_write";
 	}
 	
-	@RequestMapping(value = "guide.do", method = RequestMethod.GET)
-	public String guide() {
-		return "/guide/guide";
-	}
+
 
 	// �ּ�����
 	@RequestMapping(value = "faq.do", method = RequestMethod.GET)
 	public String FAQ() {
 		return "/guide/faq";
 	}
+	@RequestMapping(value = "guide", method = RequestMethod.GET)
+	public String guide() {
+		return "/guide/guide";
+	}
 
-	@RequestMapping(value = "/view.do", method = RequestMethod.GET)
+	@RequestMapping(value = "query_view.do", method = RequestMethod.GET)
 	public ModelAndView View(String bbsID) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -85,7 +86,7 @@ public class FQAController {
 		bbsVO vo =dao.getResultVO(bbsID);
 		
 		mv.addObject("vo",vo);
-		mv.setViewName("/FQA/view");	
+		mv.setViewName("/bbs/query_view");	
 		 return mv;
 	}
 
@@ -96,7 +97,7 @@ public class FQAController {
 		
 		bbsVO vo = dao.getResultVO(bbsID);
 		mv.addObject("vo",vo);
-		mv.setViewName("/FQA/update");
+		mv.setViewName("bbs/query_update");
 
 		return mv;
 	}
@@ -109,7 +110,7 @@ public class FQAController {
 		bbsDAO dao = sqlSession.getMapper(bbsDAO.class);
 		dao.getUpdateResult(vo);
 		
-		return "redirect:/bbs.do";
+		return "redirect:/query_list.do";
 	}
 	
 	@RequestMapping(value = "/writeAction.do", method = RequestMethod.POST)
@@ -118,7 +119,7 @@ public class FQAController {
 		bbsDAO bbsdao = sqlSession.getMapper(bbsDAO.class);
 		bbsdao.write(vo);
 
-		return "redirect:/bbs.do";
+		return "redirect:/query_list.do";
 	}
 
 	 
@@ -128,8 +129,8 @@ public class FQAController {
 		
 		bbsDAO dao = sqlSession.getMapper(bbsDAO.class);
 		dao.getDeleteResult(bbsID);
-		return "redirect:/bbs.do";
+
+		return "redirect:/query_list.do";
 		
 	}
-
 }
