@@ -17,6 +17,7 @@ public interface MemberDAO {
 	public int getLoginCheckResult(String email,String pass,int id);
 	public int getPassWordChangeResult(MemberVO vo);
 	public ArrayList<RankingVO> getRankingList();
+	public RankingVO getMypageResult(int id);
 }
 
  

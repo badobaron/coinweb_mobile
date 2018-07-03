@@ -34,7 +34,7 @@
 
 .rangking_main{
 	margin: auto;
-font-size: 20px;
+font-size: 15px;
 	width: 100%;
 	margin-top:50px;
 	margin-bottom: 150px;
@@ -87,26 +87,34 @@ width: 45%;
     
     
 }
+@media all and (max-width:340px){
+.rangking_4_20  td{      text-align: left;}
+}
+
 .rangking_4_20 th{
-	font-size:12px;
+	font-size:13px;
 	   font-weight: bold;
+	   padding-bottom: 10px;
 }
 .rangking_4_20 td{
-	font-size:16px;
+	font-size:15px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 	
 }
-.rangking_4_20 tr:hover {background-color:#f9f9f9;}
+
 
 .rangking_4_20 td:nth-child(1){
 	
 	  text-align: center;		  
-	     width:20%;
+	     width:17%;
 
 	 
 }
 .rangking_4_20  th:nth-child(1){
 	  text-align: center;	  
-	   width:20%;
+	   width:10%;
+
 	   
 	
 }
@@ -121,11 +129,11 @@ width: 45%;
 }
 .rangking_4_20  th:nth-child(4){
 	  text-align: center;	  
-	
+	 width:20%;
 }
 .rangking_4_20 td:nth-child(2){
 	 text-align: center;	  
- width:30%;
+ width:34%;
 	    
 }
 .rangking_4_20 td:nth-child(3){
@@ -135,7 +143,7 @@ width: 45%;
 }
 .rangking_4_20 td:nth-child(4){
 	 text-align: center;	  
-	   width:10%;
+	   width:20%;
 	    
 }
 

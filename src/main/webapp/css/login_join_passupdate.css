@@ -3,6 +3,11 @@
 
 
 
+@CHARSET "UTF-8";
+
+
+
+
 /*로그인 및 회원가입*/
 
 @media only screen and (min-width: 768px) {
@@ -16,7 +21,7 @@
   margin-right: 5%;
   width: 44px;
   height: 90%;
-  background: url("http://localhost:8080/coinweb_mobile/images/cd-icon-menu.svg") no-repeat center center;
+  background: url("http://localhost:8080/coinweb/img/cd-icon-menu.svg") no-repeat center center;
   cursor: pointer;
 }
 
@@ -194,15 +199,15 @@ x sigin/signup popup
 }
 
 .cd-signin-modal__label.cd-signin-modal__label--username {
-  background-image: url("http://localhost:8080/coinweb_mobile/img/cd-icon-username.svg");
+  background-image: url("http://localhost:8080/coinweb/img/cd-icon-username.svg");
 }
 
 .cd-signin-modal__label.cd-signin-modal__label--email {
-  background-image: url("http://localhost:8080/coinweb_mobile/img/cd-icon-email.svg");
+  background-image: url("http://localhost:8080/coinweb/img/cd-icon-email.svg");
 }
 
 .cd-signin-modal__label.cd-signin-modal__label--password {
-  background-image: url("http://localhost:8080/coinweb_mobile/img/cd-icon-password.svg");
+  background-image: url("http://localhost:8080/coinweb/img/cd-icon-password.svg");
 }
 
 .cd-signin-modal__input {
@@ -479,9 +484,10 @@ span.psw {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
 
     width:90%; /* Could be more or less, depending on screen size */
-    height:400px;
+    height:460px;
     margin:auto;
   border-radius:10px; 
+  
 }
 
 /* The Close Button (x) */
