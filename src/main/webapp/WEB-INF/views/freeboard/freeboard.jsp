@@ -21,8 +21,6 @@
 
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/coinweb/css/freeboard.css">
 <!-- 페이징처리 -->
 <script src="http://localhost:8080/coinweb/js/am-pagination.js"></script>
 <link rel="stylesheet" type="text/css"

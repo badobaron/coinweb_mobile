@@ -245,6 +245,16 @@ jQuery(document).ready(function($){
 		
 	});	
 
+
+jQuery("#freeboard_write_btn").click(function($){
+	var sid = '<c:out value="${sid}"/>';
+
+	if(sid==""){
+		alert("로그인 후 이용하실수 있습니다.");
+	}else{
+		location.href= '/coinweb/freeboard_write.do';			
+	}
+});
 </script>
 
 </html>

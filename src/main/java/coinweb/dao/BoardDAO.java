@@ -13,6 +13,7 @@ public interface BoardDAO {
 
 	/* community list */
 	public ArrayList<BoardVO> getBoardList(int startCount, int endCount);
+
 	public ArrayList<BoardVO> getBoardListContent(String search, int startCount, int endCount);
 	public ArrayList<BoardVO> getBoardListTitle(String search, int startCount, int endCount);
 	public int execTotalCount();
@@ -46,5 +47,6 @@ public interface BoardDAO {
 	public int insertReplyLikeit(String bid, String rid, String id, String type);
 	public int deleteReplyLikeit(String bid, String rid, String id);
 	public int getReplyLikeitCheck(HashMap<String, String> params);
+	
 
 }

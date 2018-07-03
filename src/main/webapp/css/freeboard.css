@@ -3,7 +3,7 @@
 
 
 
-/*freeboard**/
+/*freeboard  & list**/
 
 
 
@@ -39,9 +39,26 @@
 }
 
 
+.media hr{
+	margin-top: 15px !important;
+    margin-bottom: 0px!important;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.list_name{
+	color: #ff8040;
+	font-weight: bold;
+}
 
 
+.list_title a{
+	color: #535353;
+}
 
+.media-body{
+	color: #808080;
+}
 
 
 
@@ -128,25 +145,6 @@
 	color: #fff;
 }
 
-.reply-write{
-	margin: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -186,7 +184,7 @@ word-break:break-all;
 
 .replyDiv{
 border-top: 1px solid rgb(216, 216, 216);
-margin-top: 50px;
+margin-top: 20px;
 padding-top: 20px;
 }
 
@@ -211,6 +209,10 @@ color: gray;
 font-size: 9px; 
 top:-10px;
 }
+
+
+
+
 
 
 

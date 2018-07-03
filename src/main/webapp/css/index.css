@@ -1,19 +1,42 @@
 
-
 .index_coinfreeboard .col-xs-12{
 	border: 1px solid;
 }
 
-.index_coinfreeboard div h2 {
+.index_freeboard_list h2 {
 	padding:10px;
-	border-bottom: 1px solid;
-	border-top: 1px solid;
+ 	font-weight: bold;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+		
+}
+
+
+
+
+.index_freeboard_list a {
+	color: #484848;
+	
+	
 		
 }
 
 .coinlist{
 	margin-top:50px;
 }
+
+
+
+.index_freeboard_list{
+	padding: 15px;
+
+	background: #f6f6f6;
+	
+}
+
+
+
+
 
 
 
