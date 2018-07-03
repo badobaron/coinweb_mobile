@@ -40,6 +40,48 @@
 
 
 </head>
+<script type="text/javascript">
+
+/*CONTENT EMPTY&RESET*/
+$(document).ready(function(){
+	/*modal-background 수정함. 이것 수정하면 그림 영상 첨부할때 나오는 modal 값 수정 가능 */
+	$(".note-btn").click(function(){
+		$(".modal-backdrop").css("z-index","0").css("background-color","#000");
+		$(".note-toolbar").css("z-index","0");
+		
+	});
+	/*reset*/
+	$("#contentBtnReset").click(function(){
+		$("#summernote").summernote("reset");
+	});
+	/*컨탠츠 버튼 클릭시*/
+	$("#contentBtn").click(function(){
+		
+		if($("#title").val()==""){
+			alert("제목을 입력하세요");
+			$("#title").focus();
+			return false;	
+		/*content 없을때*/				
+		}else if($('#summernote').summernote('isEmpty')) {
+			  alert('내용을 입력하세요');
+			  $('#summernote').summernote('focus');
+			  return false;
+		/*등록 ajax*/	  
+		}else {
+			var htmlContent = $('#summernote').summernote('code');
+			alert(htmlContent);
+		/*
+			$(".summernote").html(htmlContent);
+			freeboard_form.submit;			
+		*/
+		}
+			
+	});		
+});
+</script>
+
+
+
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -65,18 +107,22 @@
 
 	<div class="container">
 		
-		<form id="freeboard_form" class="freeboard_form" action="#" method="post">
+		<form id="boardForm" class="board_update freeboard_form" action="freeboard_update_controller.do" method="post">
 			<!-- 작성자 -->
 			<div class="form-group">
-			<input type="text" class="title form-control" id="title" name="title" placeholder="제목을 입력하세요">
+			
+			<input type="hidden" name="no" value="${no}">
+		    <input type="hidden" name="content" id="content">
+			
+			<input type="text" id="title" name="title" value="${vo.title}" class="title form-control">
 			</div>
 		
 
-			<textarea id="summernote" name="editordata"></textarea>
+			<textarea id="summernote" id="content" name="content">${vo.content}</textarea>
 			
 			<div class="text-center">	
-				<button id="" type="submit" class="btn btn-comm-con">수정완료</button>
-				<button id=""type="reset" class="btn btn-comm-con">취소</button>
+				<button type="submit" class="btn btn-comm-con">수정완료</button>
+				<button type="reset" class="btn btn-comm-con">취소</button>
 				<a href="${pageContext.request.contextPath}/freeboard.do"><button type="button" class="btn btn-comm-con">게시글</button></a>
 			</div>
 		</form>

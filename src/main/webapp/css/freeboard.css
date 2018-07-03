@@ -133,3 +133,84 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*댓글게시판*/
+.reply-write{
+border: 1px solid rgb(216, 216, 216); 
+padding: 5px;
+margin-top: 5px;
+}
+
+
+.reply-write-title{
+position: absolute;
+z-index: -10;
+color: #9494b8;
+}
+
+
+.reply-write-content{
+height: 100px;
+z-index: 0;
+}
+
+
+.view1{
+	color:red;
+}
+.view2{
+
+word-break:break-all;
+}
+
+.replyDiv{
+border-top: 1px solid rgb(216, 216, 216);
+margin-top: 50px;
+padding-top: 20px;
+}
+
+.replyTool{
+
+float:right;
+display: inline; 
+
+}
+
+.replyBtn{
+background: none;
+border: 1px solid rgb(216, 216, 216);  
+font-size:12px;
+ width: 16.66666667%;
+height: 25px;
+margin-top:5px;
+
+}
+.replyRdate{
+color: gray; 
+font-size: 9px; 
+top:-10px;
+}
+
+
+

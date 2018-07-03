@@ -68,7 +68,7 @@ SqlSessionTemplate sqlSession;
 		}
 		
 		ArrayList<BoardVO> list =dao.getBoardList(startCount,pageSize);
-		mv.setViewName("/community/freeboard");
+		mv.setViewName("freeboard/freeboard");
 		mv.addObject("list",list);
 		mv.addObject("rpage",rpage);
 		mv.addObject("dbCount",dbCount);
@@ -94,7 +94,7 @@ SqlSessionTemplate sqlSession;
 		}else if(findValue.equals("content")){
 			dbCount= dao.execTotalCountContent(search);		
 		}else if(search.equals("")){
-			dbCount= dao.execTotalCount();
+			dbCount= dao.execTotalCountContent(search);	
 		}
 		
 
@@ -122,7 +122,7 @@ SqlSessionTemplate sqlSession;
 			list=dao.getBoardList(startCount, endCount);		
 		}
 		
-		mv.setViewName("/community/freeboard_search");
+		mv.setViewName("freeboard/freeboard_search");
 		mv.addObject("list",list);
 		mv.addObject("rpage",rpage);
 		mv.addObject("dbCount",dbCount);
@@ -137,7 +137,7 @@ SqlSessionTemplate sqlSession;
 	
 	@RequestMapping(value="/freeboard_write.do", method=RequestMethod.GET)
 	public String freeboard_write(){		
-		return "/community/freeboard_write";		
+		return "freeboard/freeboard_write";		
 	}
 	
 	@RequestMapping(value="/freeboard_write_controller.do", method=RequestMethod.POST)
@@ -182,7 +182,7 @@ SqlSessionTemplate sqlSession;
 		BoardVO vo=dao.getBoardContent(no);	
 		mv.addObject("vo",vo);
 		mv.addObject("no",no);
-		mv.setViewName("/community/freeboard_content");		
+		mv.setViewName("freeboard/freeboard_content");		
 		return mv;
 	}
 	
@@ -201,7 +201,7 @@ SqlSessionTemplate sqlSession;
 		mv.addObject("vo",vo);
 		mv.addObject("no",no);
 		
-		mv.setViewName("/community/freeboard_update");
+		mv.setViewName("freeboard/freeboard_update");
 		return mv;
 	}
 	

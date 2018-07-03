@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
@@ -45,7 +46,7 @@
      <i class="fa fa-user-circle-o" style="font-size: 60px;"></i>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">UserID</h4>
+      <h4 class="media-heading">${email}</h4>
       <br>
       <p>나의 총 자산 : 30,000,000 원</p>
     </div>
@@ -72,7 +73,7 @@
 			</div>
 			<h1 id="pc"> 비밀번호 변경</h1>
 			<div class="ps_container">
-				<input type="text" value="# " id="uid" disabled> 
+				<input type="text" value="#" id="uid" disabled> 
 				<input type="hidden" name="email" value="#" /> 
 				<input type="password" placeholder="현재 비밀번호" id="upass"> 
 				<span id="upw_msg"></span> 

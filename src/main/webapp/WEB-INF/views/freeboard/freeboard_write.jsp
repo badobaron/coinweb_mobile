@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html lang="en">
+<html lang="ko">
 	<!-- 페이지 설정 부분  -->
 <head>
 
@@ -42,6 +42,44 @@
 
 
 </head>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+
+		
+	
+
+	/*reset*/
+	$("#contentBtnReset").click(function(){
+		$("#summernote").summernote("reset");
+	});
+	/*컨탠츠 버튼 클릭시*/
+	$("#contentBtn").click(function(){
+		
+		if($("#title").val()==""){
+			alert("제목을 입력하세요");
+			$("#title").focus();
+			return false;	
+		/*content 없을때*/				
+		}else if($('#summernote').summernote('isEmpty')) {
+			  alert('내용을 입력하세요');
+			  $('#summernote').summernote('focus');
+			  return false;
+		/*등록 ajax*/	  
+		}else {
+			var htmlContent = $('#summernote').summernote('code');
+			//alert(htmlContent);
+		/*
+			$(".summernote").html(htmlContent);
+			freeboard_form.submit;			
+		*/
+		}
+			
+	});	
+	
+});	
+
+</script>
 <body>
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -68,18 +106,24 @@
 
 	<div class="container" style="margin-top: 20px;">
 		
-		<form id="freeboard_form" class="freeboard_form" action="#" method="post">
+		<form id="freeboard_form" class="freeboard_form" action="/coinweb/freeboard_write_controller.do" method="post">
 			<!-- 작성자 -->
 			<div class="form-group">
 			<input type="text" class="title form-control" id="title" name="title" placeholder="제목을 입력하세요">
+			<input class="name form-control" id="name" name="name" type="hidden" value="${name}">
+			<input class="id form-control" id="id" name="id" type="hidden" value="${sid}">	
 			</div>
+			
+			
+	
+	
 		
 
-			<textarea id="summernote" name="editordata"></textarea>
+			<textarea id="summernote"  name="content" class="content"></textarea>
 			
 			<div class="text-center">	
-				<button id="" type="submit" class="btn btn-comm-con">등록</button>
-				<button id=""type="reset" class="btn btn-comm-con">취소</button>
+				<button id="contentBtn" type="submit" class="btn btn-comm-con">등록</button>
+				<button id="contentBtnReset"type="reset" class="btn btn-comm-con">취소</button>
 				<a href="${pageContext.request.contextPath}/freeboard.do"><button type="button" class="btn btn-comm-con">게시글</button></a>
 			</div>
 		</form>
