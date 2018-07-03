@@ -81,27 +81,25 @@
 
 		<c:forEach items="${list}" var="vo">
 			<div class="media">
-				<div class="media-left">
-					<h5>${vo.no}</h5>
-				</div>
+
+				<input type="hidden" value="${vo.no}">
+
 				<div class="media-body">
-					<h4 class="media-heading">
+					<h4 class="media-heading list_title">
 						<a
 							href="${pageContext.request.contextPath}/freeboard_content.do?no=${vo.no}">${vo.title}</a>
 					</h4>
 					<div class="row">
-						<div class="col-xs-3">${vo.name}</div>
-						<div class="col-xs-3 text-right">
-							<i class="fa fa-eye"></i> ${vo.hits}
-						</div>
-						<div class="col-xs-4 text-right">${vo.fbdate}</div>
-						<div class="col-xs-2 text-right">
-							<i class="fa fa-thumbs-up"></i> ${vo.likeit}
+						<div class="col-xs-4 list_name">${vo.name}</div>
+						<div class="col-xs-8 text-right">
+							<i class="fa fa-eye"></i> ${vo.hits}&nbsp; <i class="fa fa-heart"></i>
+							${vo.likeit}&nbsp; ${vo.fbdate}
+
 						</div>
 					</div>
 				</div>
+				<hr>
 			</div>
-			<hr>
 		</c:forEach>
 
 

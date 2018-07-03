@@ -8,7 +8,7 @@
 <body>
 
 
-	<div class="container" style="background-color: white;">
+	<div class="container">
 
 		<!-- 글목록 -->
 
