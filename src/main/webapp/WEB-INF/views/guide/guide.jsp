@@ -180,9 +180,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-	 
 
 	<jsp:include page="../footer_bar.jsp" />
 </body>
