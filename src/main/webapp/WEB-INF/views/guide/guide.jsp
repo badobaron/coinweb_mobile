@@ -110,7 +110,7 @@ color: white;}
 		<p>하단바의 시세를 누르시면  호가를알수있습니다 알수있습니다.</p>
 	 <img src="${pageContext.request.contextPath}/img/add123.png"style="width:100% " >
 	  <center><img src="${pageContext.request.contextPath}/img/gid_3.png"style="width:50% " ></center><br>
-		<br><p style="font-weight: bold;">하단의 거래 버튼을 누르신후  매수혹은 매도 주문을 실항힙니다. <br>  (실제 코인을 실제 거래소 거래하는 것과 같습니다.)</p><br>
+		<br><p style="font-weight: bold;">하단의 거래 버튼을 누르신후  매수혹은 매도 주문을 실핸합니다. <br>  (실제 코인을 실제 거래소 거래하는 것과 같습니다.)</p><br>
 		  <center><img src="${pageContext.request.contextPath}/img/gid_4.png"style="width:50% " ></center><br>
 
                 </div>
