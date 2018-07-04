@@ -47,31 +47,35 @@
 
 </head>
 <script type="text/javascript">
-$(document).ready(function(){
+newJquery(document).ready(function(){
 	
-
+	newJquery(".note-btn").click(function(){
+		newJquery(".modal-backdrop").css("z-index","0").css("background-color","#000");
+		newJquery(".note-toolbar").css("z-index","0");
+		
+	});
 		
 	
 
 	/*reset*/
-	$("#contentBtnReset").click(function(){
-		$("#summernote").summernote("reset");
+	newJquery("#contentBtnReset").click(function(){
+		newJquery("#summernote").summernote("reset");
 	});
 	/*컨탠츠 버튼 클릭시*/
-	$("#contentBtn").click(function(){
+	newJquery("#contentBtn").click(function(){
 		
-		if($("#title").val()==""){
+		if(newJquery("#title").val()==""){
 			alert("제목을 입력하세요");
-			$("#title").focus();
+			newJquery("#title").focus();
 			return false;	
 		/*content 없을때*/				
-		}else if($('#summernote').summernote('isEmpty')) {
+		}else if(newJquery('#summernote').summernote('isEmpty')) {
 			  alert('내용을 입력하세요');
-			  $('#summernote').summernote('focus');
+			  newJquery('#summernote').summernote('focus');
 			  return false;
 		/*등록 ajax*/	  
 		}else {
-			var htmlContent = $('#summernote').summernote('code');
+			var htmlContent = newJquery('#summernote').summernote('code');
 			//alert(htmlContent);
 		/*
 			$(".summernote").html(htmlContent);
@@ -110,7 +114,7 @@ $(document).ready(function(){
 
 	<div class="container" style="margin-top: 20px;">
 		
-		<form id="freeboard_form" class="freeboard_form" action="/coinweb/freeboard_write_controller.do" method="post">
+		<form id="freeboard_form" class="freeboard_form" action="${pageContext.request.contextPath}/freeboard_write_controller.do" method="post">
 			<!-- 작성자 -->
 			<div class="form-group">
 			<input type="text" class="title form-control" id="title" name="title" placeholder="제목을 입력하세요">

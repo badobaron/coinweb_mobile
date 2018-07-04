@@ -91,7 +91,7 @@
 
 	<!-- 검색 -->
 	<div class="container" style="margin-top: 20px;">
-		<form action="/coinweb/freeboard_search.do?rpage=${rpage}"
+		<form action="${pageContext.request.contextPath}/freeboard_search.do?rpage=${rpage}"
 			method="get">
 			<select name="findValue" class="form-control input-sm"
 				style="float: left; width: 20%;">

@@ -18,27 +18,12 @@ import coinweb.vo.BoardVO;
 @Controller
 public class MainController {
 	
-	@Autowired
-	ServletContext context;		
-	@Autowired
-	SqlSessionTemplate sqlSession;
 
 	
 	@RequestMapping(value="index.do", method=RequestMethod.GET)
-	public ModelAndView index(){
-		ModelAndView mv = new ModelAndView();
-		BoardDAO dao = sqlSession.getMapper(coinweb.dao.BoardDAO.class);
-		
-
-		int startCount = 0;
-		int pageSize = 5;	
-	
-		
-		ArrayList<BoardVO> list =dao.getBoardList(startCount,pageSize);
-		mv.setViewName("index");
-		mv.addObject("list",list);
+	public String index(){
 		
 		
-		return mv;
+		return "index";
 	}
 }
