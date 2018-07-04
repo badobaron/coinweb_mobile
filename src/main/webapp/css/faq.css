@@ -1,1 +1,18 @@
 @CHARSET "UTF-8";
+
+.bs-example{margin-top: 70px;}
+
+#h_h{
+	background-color:#06CCD3;
+	color: white;
+}
+
+.container{font-size:4vw;}
+
+.guide_container{
+	margin-bottom:60px;
+}
+
+a{
+	text-decoration:none;
+}
