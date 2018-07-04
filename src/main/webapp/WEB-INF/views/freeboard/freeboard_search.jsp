@@ -192,7 +192,7 @@ jQuery(document).ready(function($){
 	
 	$('#ampaginationsm').on('am.pagination.change',function(e){
 		   $('.showlabelsm').text('The selected page no: '+e.page);	 
-          $(location).attr('href', "/coinweb/freeboard_search.do?rpage="+e.page+"&search=${search}&findValue=${findValue}");         
+          $(location).attr('href', "${pageContext.request.contextPath}/freeboard_search.do?rpage="+e.page+"&search=${search}&findValue=${findValue}");         
    });
 	
 	
@@ -206,7 +206,7 @@ jQuery("#freeboard_write_btn").click(function($){
 	if(sid==""){
 		alert("로그인 후 이용하실수 있습니다.");
 	}else{
-		location.href= '/coinweb/freeboard_write.do';			
+		location.href= '${pageContext.request.contextPath}/freeboard_write.do';			
 	}
 });
 </script>
