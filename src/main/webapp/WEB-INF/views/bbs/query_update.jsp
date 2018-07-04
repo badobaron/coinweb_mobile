@@ -84,7 +84,7 @@ $(document).ready(function() {
 	<hr>
 			<!-- 작성자 -->
 			<div class="form-group">
-				<input type="text" class="form_control" id="form_control" value=${ vo.bbsTitle} name="bbsTitle" id="summernote">
+				<input type="text" id="title" name="title" value="${vo.bbsTitle}" class="title form-control">
 			</div>
 			<input type="hidden" name="bbsID" id="bbsID" value="${vo.bbsID}"> 
 

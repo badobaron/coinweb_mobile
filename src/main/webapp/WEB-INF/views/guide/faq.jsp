@@ -4,11 +4,12 @@
 <html lang="ko">
 	<!-- 페이지 설정 부분  -->
 <head>
-
-<!--  저장시에 사용된 인코딩 (파일의 저장 형식) 값을 웹 브라우저에게 알려준다 -->
-<style >
+<style type="text/css" >
 .bs-example{margin-top: 70px;}
-</style>
+#h_h{background-color:#06CCD3;
+color: white;}
+.container{font-size: 5px;}</style>
+<!--  저장시에 사용된 인코딩 (파일의 저장 형식) 값을 웹 브라우저에게 알려준다 -->
 
 <meta charset="utf-8" />
 <!-- IE의 호환성 보기 모드 금지 -->
@@ -16,7 +17,11 @@
 <!-- 스마트 장치에서 해상도 균일화 처리 -->
 <meta name ="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0
 , maximum-scale=1.0 , user-scalable=no">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/fap.css">
 <!-- 브라우저에 표시될 문서 제목 -->
+
+
 <title>가상화폐 모의거래소 coinweb</title>
 
 </head>
@@ -49,7 +54,7 @@
 <div class="container">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq1">Q.모의트레이딩 시 어떤 데이터를 보고하나요?</a>
                 </h4>
@@ -61,7 +66,7 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq2">Q.원하는 거래소에서 모의 트레이딩 하는 건가요?</a>
                 </h4>
@@ -74,7 +79,7 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq3">Q.  어떤 코인을 가지고 모의트레이딩을 할 수 있나요?</a>
                 </h4>
@@ -86,7 +91,7 @@
             </div>
         </div>
           <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id= "h_h" id= "h_h" >
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq4">Q.실제 거래소에서 트레이딩 하는 방식과 똑같나요?</a>
                 </h4>
@@ -99,7 +104,7 @@
         </div>
         
          <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq5">Q.모의 트레이딩한 결과는 어디서 확인 하나요?</a>
                 </h4>
@@ -112,7 +117,7 @@
             </div>
         </div>
          <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq6">Q.모의트레이딩한 거래내역을 확인 할 수 있나요??</a>
                 </h4>
@@ -125,7 +130,7 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq7">Q.랭킹의 순위 기준은 무엇인가요?</a>
                 </h4>
@@ -137,7 +142,7 @@
             </div>
         </div>
                 <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq8">Q.모의트레이딩한 초기 모의트레이딩 투자금은 어떻게 되나요?</a>
                 </h4>
@@ -149,7 +154,7 @@
             </div>
         </div>
                 <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq9">Q.코인탭을 이용하면서 문의 및 건의사항을 전달 하고싶은데 어떻게 하나요??</a>
                 </h4>
@@ -162,7 +167,7 @@
             </div>
         </div>
                 <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="h_h">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#faq10">Q.랭킹은 반영의 기준은 언제인가요?</a>
                 </h4>
