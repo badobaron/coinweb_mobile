@@ -3,7 +3,7 @@
     
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/coinweb/css/freeboard.css">
+	href="${pageContext.request.contextPath}/coinweb/css/freeboard.css">
 
 <body>
 

@@ -113,19 +113,16 @@ function GetHoga(){
 	$.get('https://api.bithumb.com/public/orderbook/'+coin, function(data) {
 		asks = data['data']['asks'];
 		bids = data['data']['bids'];
-		
+		var coins = new Array();
 		maxCoin = 0;	
 		
 		for(i=0;i<10;i++){
-			if(maxCoin < data['data']['asks'][i]['quantity']){ 
-				maxCoin = Floor(data['data']['asks'][i]['quantity'],4);
-			}
+			coins.push(Floor(data['data']['bids'][i]['quantity'],4));
+			coins.push(Floor(data['data']['asks'][i]['quantity'],4));
 		}
-		for(i=0;i<10;i++){
-			if(maxCoin < data['data']['bids'][i]['quantity']){
-				maxCoin = Floor(data['data']['bids'][i]['quantity'],4);
-			}
-		}
+		
+		maxCoin = Math.max.apply(null, coins);
+		
 		for(i=0;i<10;i++){
 			
 			$('#ask_quantity'+i).html(Floor(data['data']['asks'][i]['quantity'],4));

@@ -22,9 +22,9 @@
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <!-- 페이징처리 -->
-<script src="http://localhost:8080/coinweb/js/am-pagination.js"></script>
+<script src="${pageContext.request.contextPath}/js/am-pagination.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/coinweb/css/am-pagination.css">
+	href="${pageContext.request.contextPath}/css/am-pagination.css">
 <!-- font-awesome 4.7.0 -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -207,7 +207,7 @@ function closeNav() {
 		
 		$('#ampaginationsm').on('am.pagination.change',function(e){
 			   $('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "/coinweb/freeboard.do?rpage="+e.page);         
+	           $(location).attr('href', "${pageContext.request.contextPath}/freeboard.do?rpage="+e.page);         
 	   		});
 		});	
 	
@@ -217,7 +217,7 @@ function closeNav() {
 		if(sid==""){
 			alert("로그인 후 이용하실수 있습니다.");
 		}else{
-			location.href= '/coinweb/freeboard_write.do';			
+			location.href= '${pageContext.request.contextPath}/freeboard_write.do';			
 		}
 	});
 </script>

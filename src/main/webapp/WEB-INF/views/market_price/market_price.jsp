@@ -261,27 +261,16 @@ function GetCoinData(){
 
 function GetHoga(){
 	$.get('https://api.bithumb.com/public/orderbook/'+coin, function(data) {
-		var maxCoin = 0;	
+		var coins = new Array();
+		maxCoin = 0;	
 		
 		for(i=0;i<10;i++){
-			var temp = data['data']['asks'][i]['quantity']
-			if(maxCoin < temp){ 
-				maxCoin = Floor(data['data']['asks'][i]['quantity'],4);
-			}
-			console.log("asks : "+Floor(data['data']['asks'][i]['quantity'],4));
-			console.log("max : "+maxCoin);
-			if(maxCoin < data['data']['asks'][i]['quantity']) console.log("true"); else console.log("flase");
+			coins.push(Floor(data['data']['bids'][i]['quantity'],4));
+			coins.push(Floor(data['data']['asks'][i]['quantity'],4));
 		}
-		for(i=0;i<10;i++){
-			var temp = data['data']['bids'][i]['quantity']
-			if(maxCoin < temp){
-				maxCoin = Floor(data['data']['bids'][i]['quantity'],4);
-			}
-			console.log("bids : "+Floor(data['data']['bids'][i]['quantity'],4));
-			console.log("max : "+maxCoin);
-			if(maxCoin < data['data']['bids'][i]['quantity']) console.log("true"); else console.log("flase");
-		}
-		console.log("-------------");
+		
+		maxCoin = Math.max.apply(null, coins);
+		
 		for(i=0;i<10;i++){
 			$('#ask_quantity'+i).html(Floor(data['data']['asks'][i]['quantity'],4));
 			$('#ask_price'+i).html(numberWithCommas(data['data']['asks'][i]['price']));
@@ -290,7 +279,6 @@ function GetHoga(){
 			$('#bid_price'+i).html(numberWithCommas(data['data']['bids'][i]['price']));
 			$('#bid_per_bar'+i).attr('style', 'width:' + (Floor(data['data']['bids'][i]['quantity'],4) / maxCoin) * 33.4 + '%')
 		}
-		$('.test').html(maxCoin);
 	});
 }
 
@@ -475,7 +463,7 @@ if(window.addEventListener){
 					<table class="table1" border="1" style="border-color: #fe3e3e3;">
 					<thead>
 						<tr>
-							<td class="col-xs-4" style="color: blue;">매도잔량<div class="test"></div></td>
+							<td class="col-xs-4" style="color: blue;">매도잔량</td>
 							<td class="col-xs-4">가격</td>
 							<td class="col-xs-4" style="color: red;">매수잔량</td>
 						</tr>
