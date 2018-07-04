@@ -51,7 +51,7 @@ function GetWalletList(){
 					else if(data[0].tot > 30000000)
 						$("#profit").html("+"+Floor((data[0].tot/30000000)*100-100,2)+"%").css("color","#43A047");
 					else if(data[0].tot < 30000000)
-						$("#profit").html(Floor((data[0].tot/30000000)*100-100,2)+"%");		
+						$("#profit").html(Floor((data[0].tot/30000000)*100-100,2)+"%").css("color","#E53935");		
 					for(var i=0;i<data.length;i++){
 						avail = (data[i].available).toFixed(4)
 						if (avail == 0) avail = 0;
