@@ -28,6 +28,7 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+  <script>var newJquery = $.noConflict(true);</script>
  <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/header_footer_bar.css">
 	
@@ -135,46 +136,8 @@ $(document).ready(function(){
 
 
 
-
-
 <!-- foooter 부분.. --> 
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-			style="font-size: 40px;">&times;</a> <a href="${pageContext.request.contextPath}/freeboard.do">자유게시판</a><hr><a
-			href="#">랭킹</a><hr> <a href="#">이용가이드</a><hr><a href="#">FAQ</a><hr> <a href="#">마이페이지</a><hr>
-	</div>
-
-	
-	
-	<nav class="navbar-fixed-bottom footer_nav">
-	<div class="container-fluid footer_container">
-		<a class="" href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-home"></i><br>
-		<p>홈</p></a> 
-		<a href="${pageContext.request.contextPath}/market_price.do"><i class="fa fa-line-chart"></i><br>
-		<p>시세</p></a> 
-		<a href="${pageContext.request.contextPath}/business.do"><i class="fa fa-exchange"></i><br>
-		<p>거래</p></a> 
-		<a href="${pageContext.request.contextPath}/wallet.do"><i class="fa fa-credit-card-alt"></i><br>
-		<p>내지갑</p></a> 
-		<span onclick="openNav()"><i class="fa fa-bars"></i><br>
-		<p>더보기</p></span>
-	</div>
-	</nav>
-
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "200px";
-}
-
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-</script>
-
-
+<jsp:include page="../footer_bar.jsp" />
 
 
 
@@ -186,7 +149,7 @@ function closeNav() {
 /*summernote form*/
 
 
-		$('#summernote').summernote({
+		newJquery('#summernote').summernote({
 		 height: 300,                 // set editor height
 		 minHeight: 300,            // set minimum height of editor
 		 maxHeight: 500,            // set maximum height of editor

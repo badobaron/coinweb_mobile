@@ -23,6 +23,7 @@
 	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <!-- 페이징처리 -->
 <script src="${pageContext.request.contextPath}/js/am-pagination.js"></script>
+<script>var newJquery = $.noConflict(true);</script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/am-pagination.css">
 <!-- font-awesome 4.7.0 -->
@@ -88,31 +89,26 @@
 
 
 
-	<div class="container">
+	<!-- 검색 -->
+	<div class="container" style="margin-top: 20px;">
 		<form action="/coinweb/freeboard_search.do?rpage=${rpage}"
 			method="get">
-			
-			<div class="col-xs-4">
-				<select name="findValue" class="form-control input-sm" style=" float: left;">
-						<option value=title>제목</option>
-						<option value=content>내용</select>
-			</div>
+			<select name="findValue" class="form-control input-sm"
+				style="float: left; width: 20%;">
+				<option value=title>제목</option>
+				<option value=content>내용
+			</select>
 
-			<div class="input-group form-group-sm col-xs-8">
+			<div class="input-group form-group-sm"
+				style="width: 80%; float: left;">
 				<input name="search" type="text" class="form-control"
-					placeholder="검색" " style="float: left;">
+					placeholder="검색">
 				<div class="input-group-btn">
 					<button class="btn btn-default " type="submit">
 						<i class="fa fa-search" style="font-size: 16px; float: left;"></i>
 					</button>
 				</div>
-
 			</div>
-
-
-
-
-
 		</form>
 	</div>
 
@@ -130,56 +126,11 @@
 
 
 
-	<!-- foooter 부분.. -->
-	<!--더보기 -->
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-			style="font-size: 40px;">&times;</a> <a
-			href="${pageContext.request.contextPath}/freeboard.do">자유게시판</a>
-		<hr>
-		<a href="#">랭킹</a>
-		<hr>
-		<a href="${pageContext.request.contextPath}/guide.do">이용가이드</a>
-		<hr>
-		<a href="${pageContext.request.contextPath}/faq.do">FAQ</a>
-		<hr>
-		<a href="${pageContext.request.contextPath}/mypage.do">마이페이지</a>
-		<hr>
-
-	</div>
 
 
 
-	<nav class="navbar-fixed-bottom footer_nav">
-	<div class="container-fluid footer_container">
-		<a class="" href="${pageContext.request.contextPath}/index.do"><i
-			class="fa fa-home"></i><br>
-			<p>홈</p></a> <a href="${pageContext.request.contextPath}/market_price.do"><i
-			class="fa fa-line-chart"></i><br>
-			<p>시세</p></a> <a href="${pageContext.request.contextPath}/business.do"><i
-			class="fa fa-exchange"></i><br>
-			<p>거래</p></a> <a href="${pageContext.request.contextPath}/wallet.do"><i
-			class="fa fa-credit-card-alt"></i><br>
-			<p>내지갑</p></a> <span onclick="openNav()"><i class="fa fa-bars"></i><br>
-			<p>더보기</p></span>
-	</div>
-	</nav>
-
-
-	<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "200px";
-}
-
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-</script>
-
-
-
+<!-- foooter 부분.. --> 
+<jsp:include page="../footer_bar.jsp" />
 
 
 
