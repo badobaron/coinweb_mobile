@@ -32,9 +32,9 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/freeboard.css">
 <!-- 페이징처리 -->
-<script src="http://localhost:8080/coinweb/js/am-pagination.js"></script>
+<script src="${pageContext.request.contextPath}/js/am-pagination.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="http://localhost:8080/coinweb/css/am-pagination.css">
+	href="${pageContext.request.contextPath}/css/am-pagination.css">
 
 <script>
 	$(document).ready(function($) {
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 			<div class="col-xs-4 text-right">
-				<a href="http://localhost:8080/coinweb/query_write.do"
+				<a href="${pageContext.request.contextPath}/query_write.do"
 					data-toggle="tooltip" type="button" id="freeboard_write_btn"
 					title="글쓰기"> <i class="fa fa-pencil-square-o"
 					style="font-size: 25px;"></i></a>

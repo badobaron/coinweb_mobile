@@ -139,8 +139,8 @@
 </body>
 
 <script>
-	$(document).ready(function($) {
-		var pager = $('#ampaginationsm').pagination({
+	newJquery(document).ready(function($) {
+		var pager = newJquery('#ampaginationsm').pagination({
 			
 		    maxSize: 7,	    		// max page size
 		    totals: '${dbCount}',	// total pages	
@@ -156,13 +156,13 @@
 		    btnSize:'sm'	// 'sm'  or 'lg'		
 			});
 		
-		$('#ampaginationsm').on('am.pagination.change',function(e){
-			   $('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "${pageContext.request.contextPath}/freeboard.do?rpage="+e.page);         
+		newJquery('#ampaginationsm').on('am.pagination.change',function(e){
+				newJquery('.showlabelsm').text('The selected page no: '+e.page);
+				newJquery(location).attr('href', "${pageContext.request.contextPath}/freeboard.do?rpage="+e.page);         
 	   		});
 		});	
 	
-	$("#freeboard_write_btn").click(function($){
+	newJquery("#freeboard_write_btn").click(function($){
 		var sid = '<c:out value="${sid}"/>';
 
 		if(sid==""){

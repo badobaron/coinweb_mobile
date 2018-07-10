@@ -22,7 +22,7 @@
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <!-- 리플 -->
-<script src="http://localhost:8080/coinweb/js/MyAjax.js"></script>
+<script src="${pageContext.request.contextPath}/js/MyAjax.js"></script>
 
 
 </head>
